@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SAFAR — Discover Pakistan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:    #0c120e;
+      --paper:  #f8f6f0;
+      --cream:  #ece8dd;
+      --stone:  #a9a394;
+      --teal:   #0f4c3a; /* Deep Emerald / Pak Green */
+      --teal-l: #e6f0ec;
+      --rust:   #b85d38;
+      --gold:   #c29b38;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 5%;
+      background: rgba(248,246,240,0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--cream);
+    }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700; font-size: 1.7rem;
+      letter-spacing: 6px; text-transform: uppercase; color: var(--ink);
+    }
+    .logo span { color: var(--teal); }
+    nav ul { list-style: none; display: flex; gap: 2.5rem; align-items: center; }
+    nav ul a {
+      text-decoration: none; font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 1.5px; text-transform: uppercase; color: #666;
+      transition: color .2s;
+    }
+    nav ul a:hover { color: var(--teal); }
+    .nav-cta {
+      background: var(--teal) !important; color: var(--paper) !important;
+      padding: .5rem 1.3rem; border-radius: 2px;
+      transition: opacity .2s;
+    }
+    .nav-cta:hover { opacity: 0.9; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      padding-top: 68px;
+    }
+    .hero-left {
+      background: var(--ink);
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 6% 6% 6% 7%;
+      position: relative; overflow: hidden;
+    }
+    .hero-left::after {
+      content: '';
+      position: absolute; bottom: -100px; right: -100px;
+      width: 350px; height: 350px; border-radius: 50%;
+      background: var(--teal); opacity: .18;
+    }
+    .hero-kicker {
+      font-size: .7rem; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 2rem;
+      display: flex; align-items: center; gap: .8rem;
+    }
+    .hero-kicker::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+    .hero-left h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5vw, 4.8rem); font-weight: 300;
+      color: var(--paper); line-height: 1.08;
+    }
+    .hero-left h1 em { font-style: italic; color: var(--gold); }
+    .hero-left p {
+      margin-top: 2rem; color: rgba(248,246,240,.65);
+      font-size: .93rem; font-weight: 300; line-height: 1.8; max-width: 380px;
+    }
+    .hero-actions { margin-top: 3rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-solid {
+      background: var(--teal); color: #fff;
+      padding: .85rem 2rem; border-radius: 2px;
+      font-family: 'Outfit', sans-serif; font-size: .78rem;
+      font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+      text-decoration: none; transition: background .2s, transform .2s;
+    }
+    .btn-solid:hover { background: #16634d; transform: translateY(-2px); }
+    .btn-ghost {
+      border: 1px solid rgba(248,246,240,.25); color: var(--paper);
+      padding: .85rem 2rem; border-radius: 2px;
+      font-family: 'Outfit', sans-serif; font-size: .78rem;
+      font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+      text-decoration: none; transition: border-color .2s, color .2s;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-stats {
+      margin-top: 4.5rem;
+      display: grid; grid-template-columns: repeat(3,1fr);
+      border-top: 1px solid rgba(248,246,240,.12); padding-top: 2rem;
+    }
+    .stat-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem; font-weight: 600; color: var(--paper);
+    }
+    .stat-l {
+      font-size: .7rem; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--stone); margin-top: .2rem;
+    }
+    .hero-right { position: relative; overflow: hidden; }
+    .hero-right img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-badge {
+      position: absolute; bottom: 2.5rem; left: 2rem;
+      background: rgba(248,246,240,.95); backdrop-filter: blur(8px);
+      border-radius: 4px; padding: 1rem 1.4rem;
+      display: flex; align-items: center; gap: 1rem;
+      box-shadow: 0 8px 40px rgba(0,0,0,.25);
+    }
+    .badge-img { width: 48px; height: 48px; border-radius: 3px; object-fit: cover; }
+    .badge-lbl { font-size: .68rem; letter-spacing: 1px; text-transform: uppercase; color: var(--stone); }
+    .badge-place { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--ink); }
+    .badge-stars { color: var(--gold); font-size: .76rem; margin-top: .15rem; }
+
+    /* SEARCH */
+    .search-wrap { background: var(--paper); padding: 0 5% 5rem; }
+    .search-card {
+      background: #fff; border: 1px solid var(--cream);
+      border-radius: 4px; padding: 1.8rem 2.5rem;
+      display: flex; gap: 0; align-items: flex-end;
+      max-width: 950px; margin: -2rem auto 0;
+      position: relative; z-index: 10;
+      box-shadow: 0 12px 48px rgba(0,0,0,.08);
+    }
+    .sf { flex: 1; padding: 0 1.5rem; border-right: 1px solid var(--cream); }
+    .sf:first-child { padding-left: 0; }
+    .sf:last-of-type { border-right: none; }
+    .sf label {
+      display: block; font-size: .65rem; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--stone); margin-bottom: .5rem;
+    }
+    .sf input, .sf select {
+      width: 100%; border: none; background: transparent;
+      font-family: 'Outfit', sans-serif; font-size: .92rem;
+      color: var(--ink); outline: none; padding: .3rem 0;
+      border-bottom: 1.5px solid transparent; transition: border-color .2s;
+    }
+    .sf input:focus, .sf select:focus { border-bottom-color: var(--teal); }
+    .sf select { cursor: pointer; }
+    .search-btn-wrap { padding-left: 1.5rem; }
+    .search-btn {
+      background: var(--teal); color: #fff; border: none;
+      padding: .9rem 2rem; border-radius: 2px;
+      font-family: 'Outfit', sans-serif; font-size: .78rem;
+      font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+      cursor: pointer; white-space: nowrap;
+      transition: background .2s, transform .2s;
+    }
+    .search-btn:hover { background: #16634d; transform: translateY(-2px); }
+
+    /* SECTION SHARED */
+    section { padding: 6rem 5%; }
+    .lbl {
+      font-size: .68rem; font-weight: 600; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--teal);
+      display: flex; align-items: center; gap: .6rem; margin-bottom: .9rem;
+    }
+    .lbl::after { content: ''; flex: 0 0 28px; height: 1px; background: var(--teal); }
+    .sec-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 2.9rem); font-weight: 600; line-height: 1.15;
+    }
+    .sec-row {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin-bottom: 3.5rem; gap: 2rem; flex-wrap: wrap;
+    }
+    .sec-row p { color: #666; max-width: 380px; font-size: .9rem; line-height: 1.7; }
+    .link-more {
+      font-size: .72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--teal); text-decoration: none;
+      border-bottom: 1px solid var(--teal); padding-bottom: .1rem; white-space: nowrap;
+    }
+
+    /* DESTINATIONS */
+    .destinations { background: var(--paper); }
+    .dest-masonry {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      grid-template-rows: 280px 280px;
+      gap: 1rem;
+    }
+    .dc { position: relative; border-radius: 3px; overflow: hidden; cursor: pointer; }
+    .dc.tall { grid-row: span 2; }
+    .dc img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; display: block; }
+    .dc:hover img { transform: scale(1.06); }
+    .dc-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(12,18,14,.85) 0%, transparent 55%);
+      display: flex; flex-direction: column;
+      justify-content: flex-end; padding: 1.4rem 1.6rem;
+    }
+    .dc-tag {
+      position: absolute; top: 1rem; left: 1rem;
+      background: rgba(248,246,240,.93); color: var(--ink);
+      font-size: .62rem; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: .3rem .7rem; border-radius: 2px;
+    }
+    .dc-country { font-size: .65rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.75); margin-bottom: .3rem; }
+    .dc-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: #fff; }
+    .dc.tall .dc-name { font-size: 2.2rem; }
+    .dc-meta { display: flex; gap: 1rem; margin-top: .4rem; font-size: .73rem; color: rgba(255,255,255,.7); }
+
+    /* TOURS */
+    .tours { background: var(--ink); }
+    .tours .lbl { color: var(--gold); }
+    .tours .lbl::after { background: var(--gold); }
+    .tours .sec-title { color: var(--paper); }
+    .tours .sec-row p { color: rgba(248,246,240,.5); }
+    .tours-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+    .tc {
+      background: rgba(248,246,240,.04);
+      border: 1px solid rgba(248,246,240,.08);
+      border-radius: 3px; overflow: hidden;
+      transition: border-color .3s, transform .3s;
+    }
+    .tc:hover { border-color: rgba(194,155,56,.4); transform: translateY(-5px); }
+    .tc img { width: 100%; height: 210px; object-fit: cover; display: block; }
+    .tc-body { padding: 1.4rem 1.6rem; }
+    .tc-tag {
+      display: inline-block; font-size: .6rem; font-weight: 600;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      padding: .22rem .65rem; border-radius: 2px; margin-bottom: .85rem;
+    }
+    .tag-adv { background: rgba(15,76,58,.3); color: #72d9b6; }
+    .tag-cul { background: rgba(194,155,56,.2); color: var(--gold); }
+    .tag-lux { background: rgba(184,93,56,.2); color: #f0a286; }
+    .tc-body h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-weight: 600; color: var(--paper); line-height: 1.25;
+    }
+    .tc-meta { display: flex; gap: 1.2rem; margin-top: .7rem; font-size: .76rem; color: rgba(248,246,240,.5); }
+    .tc-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 1.3rem; padding-top: 1.1rem;
+      border-top: 1px solid rgba(248,246,240,.08);
+    }
+    .tc-price { font-size: .73rem; color: rgba(248,246,240,.5); }
+    .tc-price strong { display: block; font-size: 1.15rem; font-weight: 600; color: var(--paper); }
+    .tc-btn {
+      background: transparent; border: 1px solid rgba(248,246,240,.2);
+      color: var(--paper); font-family: 'Outfit', sans-serif;
+      font-size: .7rem; font-weight: 600; letter-spacing: 1.2px;
+      text-transform: uppercase; padding: .55rem 1.1rem;
+      border-radius: 2px; cursor: pointer;
+      transition: background .2s, border-color .2s;
+    }
+    .tc-btn:hover { background: var(--teal); border-color: var(--teal); }
+
+    /* WHY US STRIP */
+    .exp-strip { background: var(--teal); padding: 4rem 5%; }
+    .exp-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(255,255,255,.15); }
+    .exp-item { background: var(--teal); padding: 2.5rem 2rem; text-align: center; transition: background .2s; }
+    .exp-item:hover { background: #135844; }
+    .exp-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+    .exp-item h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: #fff; margin-bottom: .5rem; }
+    .exp-item p { font-size: .82rem; color: rgba(255,255,255,.7); line-height: 1.6; }
+
+    /* EDITORIAL */
+    .editorial { background: var(--cream); }
+    .ed-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .ed-card {
+      background: var(--paper); border-radius: 3px; overflow: hidden;
+      border: 1px solid rgba(0,0,0,.06);
+      transition: box-shadow .3s;
+    }
+    .ed-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.08); }
+    .ed-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .ed-card-body { padding: 1.8rem; }
+    .ed-kicker { font-size: .65rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); margin-bottom: .7rem; }
+    .ed-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; line-height: 1.2; }
+    .ed-card p { font-size: .87rem; color: #555; line-height: 1.75; margin-top: .7rem; }
+    .ed-link {
+      display: inline-block; margin-top: 1.1rem;
+      font-size: .72rem; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--ink);
+      text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: .1rem;
+    }
+
+    /* TESTIMONIALS */
+    .testi { background: var(--paper); }
+    .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+    .test-card {
+      background: #fff; border-radius: 3px; padding: 2rem;
+      border: 1px solid rgba(0,0,0,.06); transition: box-shadow .3s;
+    }
+    .test-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.07); }
+    .stars { color: var(--gold); font-size: .88rem; letter-spacing: 2px; margin-bottom: 1rem; }
+    .test-card blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem; font-style: italic;
+      color: var(--ink); line-height: 1.65;
+    }
+    .test-author { display: flex; align-items: center; gap: .8rem; margin-top: 1.4rem; }
+    .test-av { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
+    .test-name { font-size: .87rem; font-weight: 600; }
+    .test-trip { font-size: .73rem; color: var(--stone); }
+
+    /* CTA BANNER */
+    .cta-banner {
+      position: relative; overflow: hidden; padding: 9rem 5%; text-align: center;
+      background: url('https://images.unsplash.com/photo-1548013146-72479768bada?w=1600') center/cover no-repeat;
+    }
+    .cta-banner::before { content: ''; position: absolute; inset: 0; background: rgba(12,18,14,.78); }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta-banner h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 300;
+      color: var(--paper); line-height: 1.1;
+    }
+    .cta-banner h2 em { font-style: italic; color: var(--gold); }
+    .cta-banner p { color: rgba(248,246,240,.7); font-size: .98rem; max-width: 460px; margin: 1.5rem auto 3rem; line-height: 1.75; }
+
+    /* FOOTER */
+    footer { background: var(--ink); padding: 5rem 5% 2rem; }
+    .ft-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3.5rem; border-bottom: 1px solid rgba(248,246,240,.08); }
+    .ft-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: var(--paper); }
+    .ft-logo span { color: var(--teal); }
+    .ft-desc { font-size: .84rem; line-height: 1.75; margin-top: 1rem; max-width: 280px; color: rgba(248,246,240,.5); }
+    footer h4 { font-size: .65rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--paper); margin-bottom: 1.2rem; }
+    footer ul { list-style: none; }
+    footer li { margin-bottom: .65rem; }
+    footer a { color: rgba(248,246,240,.5); text-decoration: none; font-size: .84rem; transition: color .2s; }
+    footer a:hover { color: var(--gold); }
+    .ft-bottom { text-align: center; padding-top: 2rem; font-size: .74rem; color: rgba(248,246,240,.3); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-kicker { animation: fadeUp .7s ease both; }
+    .hero-left h1 { animation: fadeUp .7s .15s ease both; }
+    .hero-left p  { animation: fadeUp .7s .3s ease both; }
+    .hero-actions { animation: fadeUp .7s .45s ease both; }
+    .hero-stats   { animation: fadeUp .7s .6s ease both; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .dest-masonry { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .dc.tall { grid-row: span 1; }
+      .dc img, .dc.tall img { min-height: 240px; }
+      .tours-grid { grid-template-columns: 1fr 1fr; }
+      .exp-grid { grid-template-columns: 1fr 1fr; }
+      .testi-grid { grid-template-columns: 1fr 1fr; }
+      .ft-grid { grid-template-columns: 1fr 1fr; }
+      nav ul { display: none; }
+    }
+    @media (max-width: 560px) {
+      .dest-masonry { grid-template-columns: 1fr; }
+      .tours-grid { grid-template-columns: 1fr; }
+      .ed-grid { grid-template-columns: 1fr; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .ft-grid { grid-template-columns: 1fr; }
+      .search-card { flex-direction: column; gap: 1rem; }
+      .sf { border-right: none; padding: 0; border-bottom: 1px solid var(--cream); padding-bottom: .8rem; }
+      .sf:last-of-type { border-bottom: none; }
+      .search-btn-wrap { padding-left: 0; width: 100%; }
+      .search-btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">SAF<span>AR</span></div>
+    <ul>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#tours">Expeditions</a></li>
+      <li><a href="#stories">Heritage</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#" class="nav-cta">Plan Your Journey</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-kicker">Curated Pakistan Expeditions</div>
+      <h1>Discover<br>the Land of <em>Peaks & Heritage</em></h1>
+      <p>From the glacial valleys of the Karakoram to the ancient Mughal courtyards of Lahore, explore Pakistan's breathtaking natural landscapes and timeless hospitality.</p>
+      <div class="hero-actions">
+        <a href="#destinations" class="btn-solid">Explore Valleys</a>
+        <a href="#tours" class="btn-ghost">View Tour Packages</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-n">50+</div><div class="stat-l">Valleys & Sites</div></div>
+        <div><div class="stat-n">15K+</div><div class="stat-l">Travelers</div></div>
+        <div><div class="stat-n">8,000m</div><div class="stat-l">Peak Expeditions</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=900" alt="Hunza Valley Pakistan" />
+      <div class="hero-badge">
+        <img class="badge-img" src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=120" alt="Attabad Lake" />
+        <div>
+          <div class="badge-lbl">Featured Highland</div>
+          <div class="badge-place">Hunza Valley, Gilgit-Baltistan</div>
+          <div class="badge-stars">★★★★★ &nbsp;4.9 / 5.0</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH -->
+  <div class="search-wrap">
+    <div class="search-card">
+      <div class="sf">
+        <label>Destination</label>
+        <input type="text" placeholder="e.g. Skardu, Swat, Hunza…" />
+      </div>
+      <div class="sf">
+        <label>Departure</label>
+        <input type="date" />
+      </div>
+      <div class="sf">
+        <label>Return</label>
+        <input type="date" />
+      </div>
+      <div class="sf">
+        <label>Region / Style</label>
+        <select>
+          <option>All Regions</option>
+          <option>Gilgit-Baltistan (High Peaks)</option>
+          <option>Khyber Pakhtunkhwa (Valleys)</option>
+          <option>Punjab & Sindh (Heritage & Sufi)</option>
+          <option>Balochistan (Coastal Highway)</option>
+        </select>
+      </div>
+      <div class="search-btn-wrap">
+        <button class="search-btn">Find Tours →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESTINATIONS -->
+  <section class="destinations" id="destinations">
+    <div class="sec-row">
+      <div>
+        <div class="lbl">Iconic Regions</div>
+        <h2 class="sec-title">Destinations Worth<br>Every Mile</h2>
+      </div>
+      <div>
+        <p>From the emerald waters of Attabad to the rugged cliffs of Passu Cones and the historical walls of Lahore Fort — experience the best of Pakistan.</p>
+        <a href="#" class="link-more" style="margin-top:1rem;display:inline-block;">All Destinations →</a>
+      </div>
+    </div>
+    <div class="dest-masonry">
+      <div class="dc tall">
+        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=800" alt="Hunza Valley" />
+        <div class="dc-overlay">
+          <div class="dc-tag">Most Popular</div>
+          <div class="dc-country">Gilgit-Baltistan · Pakistan</div>
+          <div class="dc-name">Hunza & Passu Cones</div>
+          <div class="dc-meta"><span>8 days</span><span>★ 4.9</span><span>From PKR 115,000</span></div>
+        </div>
+      </div>
+      <div class="dc">
+        <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=600" alt="Skardu" />
+        <div class="dc-overlay">
+          <div class="dc-country">Gilgit-Baltistan · Pakistan</div>
+          <div class="dc-name">Skardu & Deosai Plains</div>
+          <div class="dc-meta"><span>7 days</span><span>From PKR 135,000</span></div>
+        </div>
+      </div>
+      <div class="dc">
+        <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?w=600" alt="Badshahi Mosque" />
+        <div class="dc-overlay">
+          <div class="dc-country">Punjab · Pakistan</div>
+          <div class="dc-name">Walled City & Badshahi Mosque</div>
+          <div class="dc-meta"><span>3 days</span><span>From PKR 45,000</span></div>
+        </div>
+      </div>
+      <div class="dc">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600" alt="Swat Valley" />
+        <div class="dc-overlay">
+          <div class="dc-country">KP · Pakistan</div>
+          <div class="dc-name">Swat & Kalam Valley</div>
+          <div class="dc-meta"><span>5 days</span><span>From PKR 75,000</span></div>
+        </div>
+      </div>
+      <div class="dc">
+        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600" alt="Balochistan Coastal Highway" />
+        <div class="dc-overlay">
+          <div class="dc-country">Balochistan · Pakistan</div>
+          <div class="dc-name">Kund Malir & Hingol</div>
+          <div class="dc-meta"><span>2 days</span><span>From PKR 35,000</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOURS -->
+  <section class="tours" id="tours">
+    <div class="sec-row">
+      <div>
+        <div class="lbl">Curated Expeditions</div>
+        <h2 class="sec-title">Guided Pakistan<br>Experiences</h2>
+      </div>
+      <div>
+        <p>Complete ground-handling, licensed 4x4 mountain drivers, high-altitude support, and verified boutique resort stays.</p>
+        <a href="#" class="link-more" style="margin-top:1rem;display:inline-block;color:var(--gold);border-color:var(--gold);">All Packages →</a>
+      </div>
+    </div>
+    <div class="tours-grid">
+      <div class="tc">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600" alt="Fairy Meadows" />
+        <div class="tc-body">
+          <span class="tc-tag tag-adv">Adventure</span>
+          <h3>Fairy Meadows & Nanga Parbat Base</h3>
+          <div class="tc-meta"><span>📍 Gilgit-Baltistan</span><span>📅 6 days</span><span>👥 Max 10</span></div>
+          <div class="tc-footer">
+            <div class="tc-price">From<strong>PKR 98,000</strong></div>
+            <button class="tc-btn">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="tc">
+        <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?w=600" alt="Mughal Heritage Lahore" />
+        <div class="tc-body">
+          <span class="tc-tag tag-cul">Heritage & Food</span>
+          <h3>Old Lahore & Mughal Art Trail</h3>
+          <div class="tc-meta"><span>📍 Lahore, Punjab</span><span>📅 3 days</span><span>👥 Max 14</span></div>
+          <div class="tc-footer">
+            <div class="tc-price">From<strong>PKR 42,000</strong></div>
+            <button class="tc-btn">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="tc">
+        <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=600" alt="Skardu Resort" />
+        <div class="tc-body">
+          <span class="tc-tag tag-lux">Luxury</span>
+          <h3>Serena Shigar & Khaplu Palace Retreat</h3>
+          <div class="tc-meta"><span>📍 Skardu Valley</span><span>📅 5 days</span><span>👥 Couples</span></div>
+          <div class="tc-footer">
+            <div class="tc-price">From<strong>PKR 245,000</strong></div>
+            <button class="tc-btn">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <div class="exp-strip">
+    <div class="exp-grid">
+      <div class="exp-item"><div class="exp-icon">🏔️</div><h3>Native Local Guides</h3><p>Led by seasoned mountain guides from Hunza, Baltistan, and historical cities.</p></div>
+      <div class="exp-item"><div class="exp-icon">🚙</div><h3>Equipped 4x4 Fleet</h3><p>Dedicated luxury Land Cruisers and Prado jeeps tested for high mountain terrain.</p></div>
+      <div class="exp-item"><div class="exp-icon">🏨</div><h3>Handpicked Stays</h3><p>From heritage forts like Shigar to boutique glamping pods overlooking glaciers.</p></div>
+      <div class="exp-item"><div class="exp-icon">🤝</div><h3>Community First</h3><p>We support indigenous Northern communities, women-led craft centers, and Leave No Trace tourism.</p></div>
+    </div>
+  </div>
+
+  <!-- STORIES -->
+  <section class="editorial" id="stories">
+    <div class="sec-row">
+      <div>
+        <div class="lbl">Travel Chronicles</div>
+        <h2 class="sec-title">Field Notes &<br>Highland Guides</h2>
+      </div>
+      <a href="#" class="link-more">All Articles →</a>
+    </div>
+    <div class="ed-grid">
+      <div class="ed-card">
+        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=700" alt="Karakoram Highway" />
+        <div class="ed-card-body">
+          <div class="ed-kicker">Epic Roadtrips</div>
+          <h3>Driving the Karakoram Highway: The 8th Wonder</h3>
+          <p>Navigating tunnels through turquoise lakes, border crossings at Khunjerab Pass at 15,397 ft, and centuries of ancient Silk Road history.</p>
+          <a href="#" class="ed-link">Read Guide →</a>
+        </div>
+      </div>
+      <div class="ed-card">
+        <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?w=700" alt="Food Trail Lahore" />
+        <div class="ed-card-body">
+          <div class="ed-kicker">Culinary Journeys</div>
+          <h3>A Midnight Tour of Gawalmandi & Haveli Views</h3>
+          <p>From fragrant mutton Karahi to slow-cooked Nihari under the illuminated minarets of Badshahi Mosque in the historic heart of Lahore.</p>
+          <a href="#" class="ed-link">Read Story →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testi" id="reviews">
+    <div class="sec-row">
+      <div>
+        <div class="lbl">Traveler Reviews</div>
+        <h2 class="sec-title">Stories from<br>Our Travelers</h2>
+      </div>
+      <p>Travelers and overseas Pakistanis who trusted us with their journey through the homeland.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Hunza and Attabad Lake were surreal. Our driver, Ali from Karimabad, navigated every turn flawlessly and introduced us to local apricot culture and hospitable families."</blockquote>
+        <div class="test-author">
+          <img class="test-av" src="https://i.pravatar.cc/80?img=68" alt="Hamza" />
+          <div><div class="test-name">Hamza & Ayesha Siddiqui</div><div class="test-trip">Hunza Autumn Tour · 2025</div></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Staying at Serena Shigar Fort was like stepping back in time. Safar took care of our Islamabad-to-Skardu flights and jeep arrangements without a single hitch."</blockquote>
+        <div class="test-author">
+          <img class="test-av" src="https://i.pravatar.cc/80?img=12" alt="Tariq" />
+          <div><div class="test-name">Tariq Mehmood</div><div class="test-trip">Heritage Baltistan Retreat · 2026</div></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"The Nanga Parbat base camp trek was a bucket list dream realized. Expert porters, heated tents, and safety at every point along the trail."</blockquote>
+        <div class="test-author">
+          <img class="test-av" src="https://i.pravatar.cc/80?img=33" alt="Zainab" />
+          <div><div class="test-name">Zainab Raza</div><div class="test-trip">Fairy Meadows Trek · 2025</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="cta-inner">
+      <h2>Your Homeland Journey<br>Starts <em>Here</em></h2>
+      <p>Speak with our destination coordinators in Islamabad, Lahore, or Karachi to plan your custom expedition across Pakistan.</p>
+      <a href="#" class="btn-solid" style="font-size:.82rem;padding:1rem 2.5rem;">Custom Itinerary Request →</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="ft-grid">
+      <div>
+        <div class="ft-logo">SAF<span>AR</span></div>
+        <p class="ft-desc">Crafting high-end expeditions, cultural trails, and mountain journeys across Pakistan with uncompromised comfort and local authenticity.</p>
+      </div>
+      <div>
+        <h4>Regions</h4>
+        <ul>
+          <li><a href="#">Gilgit-Baltistan</a></li>
+          <li><a href="#">Khyber Pakhtunkhwa</a></li>
+          <li><a href="#">Punjab & Potohar</a></li>
+          <li><a href="#">Sindh Heritage</a></li>
+          <li><a href="#">Balochistan Coast</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Safar</a></li>
+          <li><a href="#">Our Mountain Guides</a></li>
+          <li><a href="#">Eco-Tourism & Leave No Trace</a></li>
+          <li><a href="#">Corporate Retreats</a></li>
+          <li><a href="#">Press & Media</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help & Support</h4>
+        <ul>
+          <li><a href="#">Contact Support</a></li>
+          <li><a href="#">High-Altitude Safety FAQ</a></li>
+          <li><a href="#">Domestic Travel Advisory</a></li>
+          <li><a href="#">Terms & Cancellation</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">© 2026 Sandesh Kumar — All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
