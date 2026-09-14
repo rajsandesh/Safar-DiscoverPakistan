@@ -1,0 +1,3214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Core SEO & Open Graph Meta Tags -->
+  <title id="meta-title">SAFAR — Discover Pakistan | Valleys, Sufi Trails & High Peaks</title>
+  <meta name="description" id="meta-desc" content="Discover Pakistan with Safar. Curated mountain expeditions, Sindh heritage circuits, Gorakh Hill stargazing, Mohenjo-daro archaeological trails, and private Karakoram 4x4 convoys." />
+  <meta name="keywords" content="Pakistan travel agency, Hunza tour, Skardu trip, Sindh tourism, Gorakh Hill package, Mohenjo Daro tour, Makli Thatta, Fairy Meadows trek, Lahore cultural tour" />
+  <meta property="og:title" id="og-title" content="SAFAR — Discover Pakistan" />
+  <meta property="og:description" id="og-desc" content="Authentic luxury guided tours, Karakoram mountain expeditions, and historic Indus Valley trails across Pakistan." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://safar-travels.pk/" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:        #080d0a;
+      --paper:      #f8f6f0;
+      --cream:      #ece8dd;
+      --stone:      #a9a394;
+      --teal:       #0f4c3a;        /* Deep Pakistani Emerald Green */
+      --teal-hover: #16634d;
+      --teal-l:     #e6f0ec;
+      --emerald-light: #2dd4bf;     /* Bright Accent Green */
+      --emerald-glow: rgba(45, 212, 191, 0.4);
+      --gold:       #c29b38;        /* Rich Gold / Yellow */
+      --gold-light: #eab308;
+      --gold-glow:  rgba(234, 179, 8, 0.4);
+      --border-dark: rgba(255,255,255,0.12);
+      --card-bg:    #0e1611;
+      --ease:       cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--ink);
+      color: var(--paper);
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* PRELOADER */
+    #preloader {
+      position: fixed; inset: 0; z-index: 9999;
+      background: #040805;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      transition: opacity 0.8s var(--ease), visibility 0.8s var(--ease);
+    }
+    #preloader.loaded { opacity: 0; visibility: hidden; pointer-events: none; }
+    .preloader-brand {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.6rem; font-weight: 800;
+      letter-spacing: 12px; color: #fff;
+      margin-bottom: 1.5rem; text-transform: uppercase;
+    }
+    .preloader-brand span { color: var(--gold); }
+    .loader-ring {
+      width: 44px; height: 44px;
+      border: 2px solid rgba(255,255,255,0.1);
+      border-top: 2px solid var(--gold);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    .loader-sub {
+      color: var(--stone); font-size: .65rem;
+      letter-spacing: 4px; text-transform: uppercase;
+      margin-top: 1.5rem;
+    }
+
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+
+    /* ROUTE TRANSITION OVERLAY */
+    #route-loader {
+      position: fixed; inset: 0; z-index: 1500;
+      background: rgba(8, 13, 10, 0.85);
+      backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.25s var(--ease);
+    }
+    #route-loader.show { opacity: 1; pointer-events: all; }
+    .route-spin {
+      width: 38px; height: 38px;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+
+    /* GLOBAL NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 6%;
+      background: linear-gradient(180deg, rgba(8,13,10,0.92) 0%, rgba(8,13,10,0) 100%);
+      transition: background 0.3s var(--ease);
+    }
+    .nav-scrolled {
+      background: rgba(8, 13, 10, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 1.15rem; font-weight: 800; letter-spacing: 4px;
+      text-transform: uppercase; color: #fff; text-decoration: none;
+    }
+    .nav-tag-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+    nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
+    nav ul a {
+      text-decoration: none; font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.75);
+      transition: color .2s var(--ease);
+      position: relative;
+    }
+    nav ul a:hover, nav ul a.active { color: #fff; }
+    nav ul a.active::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 100%;
+      height: 2px; background: var(--gold);
+    }
+    .nav-cta {
+      background: #fff !important; color: var(--ink) !important;
+      padding: .6rem 1.4rem; border-radius: 3px; font-weight: 600 !important;
+      font-size: 0.82rem; letter-spacing: 1.5px;
+      transition: opacity .2s !important;
+      text-decoration: none;
+    }
+    .nav-cta:hover { opacity: 0.9; }
+
+    /* VIEW CONTROLLER */
+    main { flex: 1; position: relative; }
+    .page-view {
+      display: none; opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+    }
+    .page-view.active-page { display: block; opacity: 1; transform: translateY(0); }
+
+    /* HERO BANNER */
+    .hero-cinematic {
+      position: relative;
+      height: 100vh;
+      min-height: 740px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 6% 4.5rem;
+      background: linear-gradient(180deg, rgba(8,13,10,0.3) 0%, rgba(8,13,10,0.7) 65%, #080d0a 100%),
+                  url('hero.png') center/cover no-repeat;
+    }
+    .hero-cat-bar {
+      position: absolute; top: 92px; left: 6%; right: 6%;
+      display: flex; gap: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      padding-bottom: 1rem; flex-wrap: wrap;
+    }
+    .hero-cat-bar a {
+      color: rgba(255,255,255,0.7); text-decoration: none;
+      font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;
+      font-weight: 500; transition: color 0.2s;
+    }
+    .hero-cat-bar a.active, .hero-cat-bar a:hover { color: #fff; }
+
+    .hero-main-title {
+      font-size: clamp(4.2rem, 9.5vw, 10rem);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 0.92;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 2.4rem;
+    }
+
+    .hero-num-rail {
+      position: absolute; right: 6%; top: 38%;
+      display: flex; flex-direction: column; align-items: flex-end; gap: .5rem;
+      font-family: 'Outfit', sans-serif; font-size: .95rem; color: rgba(255,255,255,0.35);
+    }
+    .hero-num-rail .current {
+      font-size: 1.8rem; font-weight: 700; color: #fff;
+      display: flex; align-items: center; gap: .6rem;
+    }
+    .hero-num-rail .current::after {
+      content: ''; width: 32px; height: 2px; background: #fff;
+    }
+
+    .hero-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3.5rem;
+      border-top: 1px solid rgba(255,255,255,0.18);
+      padding-top: 2rem;
+      max-width: 1200px;
+    }
+    .hero-info-card h4 {
+      font-size: 0.85rem; letter-spacing: 2.2px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: .6rem; font-weight: 700;
+    }
+    .hero-info-card p {
+      font-size: 0.95rem; color: rgba(255,255,255,0.75);
+      line-height: 1.7; font-weight: 300;
+    }
+
+    .hero-swipe-cue {
+      margin-top: 1.8rem;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: #fff;
+      display: flex; align-items: center; gap: .6rem;
+      text-decoration: none;
+    }
+
+    /* SEARCH FILTER BAR */
+    .search-strip {
+      background: #080d0a;
+      padding: 3.5rem 6% 5.5rem;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .search-card-dark {
+      background: #0e1611;
+      border: 1px solid var(--border-dark);
+      border-radius: 8px;
+      padding: 1.8rem 2.4rem;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr auto;
+      gap: 1.8rem;
+      align-items: center;
+      max-width: 1340px;
+      margin: 0 auto;
+    }
+    .sf-dark label {
+      display: block; font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase; color: var(--stone);
+      margin-bottom: 0.5rem;
+    }
+    .sf-dark input, .sf-dark select {
+      width: 100%; border: none; background: transparent;
+      font-family: 'Outfit', sans-serif; font-size: 1rem;
+      color: #fff; outline: none; border-bottom: 1.5px solid rgba(255,255,255,0.2);
+      padding-bottom: 0.4rem; transition: border-color 0.2s;
+    }
+    .sf-dark select option { background: #0e1611; color: #fff; }
+    .sf-dark input:focus, .sf-dark select:focus { border-bottom-color: var(--gold); }
+
+    /* DYNAMIC FILTER TABS */
+    .filter-tabs {
+      display: flex; gap: 0.9rem; margin-bottom: 3.5rem; flex-wrap: wrap; justify-content: center;
+    }
+    .filter-btn {
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border-dark);
+      color: rgba(255,255,255,0.75); padding: 0.65rem 1.4rem;
+      border-radius: 4px; font-size: 0.8rem; letter-spacing: 1.8px;
+      text-transform: uppercase; cursor: pointer; transition: all 0.2s var(--ease);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--teal); color: #fff; border-color: var(--teal);
+    }
+
+    /* RECOMMENDATIONS CARDS */
+    .dest-rec-section {
+      background: #080d0a;
+      padding: 6.5rem 6% 8rem;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .section-lead-center {
+      text-align: center;
+      margin-bottom: 4.5rem;
+    }
+    .sec-sub-kicker {
+      font-size: 0.85rem; letter-spacing: 3.5px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.8rem; font-weight: 700;
+    }
+    .sec-head-bold {
+      font-size: clamp(2.3rem, 4.2vw, 3.5rem);
+      font-weight: 800; letter-spacing: -0.5px;
+      color: #fff;
+      text-transform: capitalize;
+    }
+
+    .rec-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.8rem;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    
+    .rec-card-modern {
+      position: relative;
+      height: 440px;
+      border-radius: 22px;
+      overflow: hidden;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.4rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+      transition: transform 0.45s var(--ease), border-color 0.35s ease, box-shadow 0.45s ease;
+      cursor: pointer;
+    }
+    .rec-card-modern:hover {
+      transform: translateY(-10px);
+      border-color: rgba(194, 155, 56, 0.5);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.85), 0 0 30px rgba(15, 76, 58, 0.4);
+    }
+    
+    .rec-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 1;
+      filter: brightness(0.9);
+      transition: transform 0.75s var(--ease), filter 0.5s ease;
+    }
+    .rec-card-modern:hover .rec-bg-img {
+      transform: scale(1.08);
+      filter: brightness(0.98);
+    }
+
+    .rec-card-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(180deg, rgba(8, 13, 10, 0.4) 0%, rgba(8, 13, 10, 0.1) 40%, rgba(8, 13, 10, 0.95) 90%);
+      pointer-events: none;
+    }
+
+    .rec-top-row {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .rec-pill-rank {
+      background: rgba(15, 76, 58, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(45, 212, 191, 0.35);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 0.45rem 0.9rem;
+      border-radius: 30px;
+    }
+    .rec-num-chip {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 800;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .rec-bottom-content {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .rec-region-sub {
+      font-size: 0.76rem;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .rec-region-sub::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    .rec-main-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.25;
+      letter-spacing: -0.2px;
+    }
+    
+    .rec-hover-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 0.6rem;
+      opacity: 0.85;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .rec-card-modern:hover .rec-hover-btn {
+      color: var(--gold);
+      transform: translateX(4px);
+    }
+    .rec-hover-btn span {
+      font-size: 1rem;
+      transition: transform 0.2s;
+    }
+    .rec-card-modern:hover .rec-hover-btn span {
+      transform: translate(2px, -2px);
+    }
+
+    /* DESTINATIONS PAGE GALLERY */
+    .dest-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.8rem;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    .dest-gallery-card {
+      position: relative;
+      height: 380px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.4rem;
+      transition: transform 0.4s var(--ease), border-color 0.3s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+    .dest-gallery-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.8), 0 0 25px rgba(194, 155, 56, 0.3);
+    }
+    .dest-gallery-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 1;
+      filter: brightness(0.9);
+      transition: transform 0.7s var(--ease);
+    }
+    .dest-gallery-card:hover img {
+      transform: scale(1.08);
+      filter: brightness(0.98);
+    }
+    .dest-gallery-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(180deg, rgba(8, 13, 10, 0.2) 0%, rgba(8, 13, 10, 0.1) 40%, rgba(8, 13, 10, 0.95) 90%);
+      pointer-events: none;
+    }
+    .dest-gallery-info {
+      position: relative;
+      z-index: 3;
+    }
+    .dest-gallery-rank {
+      font-size: 0.76rem;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+    .dest-gallery-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.3;
+    }
+
+    /* SINDH SPOTLIGHT SECTION */
+    .sindh-spotlight {
+      background: #080d0a;
+      padding: 7rem 6% 8rem;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .sindh-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.2rem;
+      margin-top: 4rem;
+      max-width: 1440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .sindh-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border-dark);
+      border-radius: 12px;
+      padding: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s;
+    }
+    .sindh-box:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,255,255,0.3);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.5);
+    }
+    .sindh-media {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      background: #050806;
+    }
+    .sindh-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+      transition: transform 0.6s var(--ease);
+    }
+    .sindh-box:hover .sindh-media img {
+      transform: scale(1.06);
+    }
+    .sindh-body {
+      padding: 1.6rem 0.6rem 0.8rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .sindh-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.7rem;
+      display: block;
+    }
+    .sindh-body h3 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 0.9rem;
+      line-height: 1.3;
+      color: #fff;
+    }
+    .sindh-body p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    /* WHY US STRIP */
+    .why-safar-strip {
+      background: #060907;
+      padding: 6.5rem 6%;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.2rem;
+      margin-top: 3rem;
+      max-width: 1440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .why-item {
+      padding: 2rem;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border-dark);
+      border-radius: 6px;
+    }
+    .why-icon {
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .why-item h4 {
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: #fff;
+    }
+    .why-item p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.7;
+    }
+
+    /* TRAVEL AND ENJOY STORY BANNER */
+    .feature-banner {
+      background: #060907;
+      padding: 7rem 6%;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: center;
+      border-bottom: 1px solid var(--border-dark);
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    .feature-banner h2 {
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 800; text-transform: uppercase;
+      line-height: 1.05; letter-spacing: -1px;
+      margin-bottom: 2rem;
+    }
+    .feature-cue {
+      display: inline-flex; align-items: center; gap: 0.8rem;
+      font-size: 0.85rem; font-weight: 600; letter-spacing: 1.8px;
+      text-transform: uppercase; color: #fff; text-decoration: none;
+      margin-bottom: 2rem;
+    }
+    .cue-circle {
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 1.5px solid #fff; display: flex; align-items: center;
+      justify-content: center; font-size: 0.8rem;
+    }
+    .feature-desc {
+      font-size: 1rem; color: rgba(255,255,255,0.7);
+      line-height: 1.85; max-width: 480px; font-weight: 300;
+      margin-bottom: 2.8rem;
+    }
+    .feature-thumbnails {
+      display: grid; grid-template-columns: 1.4fr 1fr;
+      gap: 1.5rem;
+    }
+    .feature-thumb-box {
+      aspect-ratio: 4 / 3; border-radius: 8px;
+      overflow: hidden; position: relative;
+    }
+    .feature-thumb-box img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: brightness(0.88); transition: transform 0.6s var(--ease);
+    }
+    .feature-thumb-box:hover img { transform: scale(1.06); }
+
+    /* INNER PAGES STYLING */
+    .inner-header {
+      padding: 8rem 6% 3.5rem;
+      background: #060907;
+      border-bottom: 1px solid var(--border-dark);
+      text-align: center;
+    }
+    .inner-header h1 {
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      font-weight: 800; text-transform: uppercase;
+      letter-spacing: -1px; margin-top: 0.5rem;
+    }
+    .inner-body { padding: 4.5rem 6% 6rem; background: #080d0a; }
+
+    /* REVEAL CARD ANIMATION */
+    .reveal-card {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+    }
+    .reveal-card.visible { opacity: 1; transform: translateY(0); }
+
+    /* EXPEDITIONS / TOURS GRID */
+    .tours-grid { 
+      display: grid; 
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 2rem; 
+      max-width: 1240px;
+      margin: 0 auto; 
+    }
+    .tc {
+      background: var(--card-bg);
+      border: 1px solid var(--border-dark);
+      border-radius: 12px;
+      padding: 12px;
+      overflow: hidden;
+      display: flex; 
+      flex-direction: column;
+      transition: transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s;
+    }
+    .tc:hover { 
+      transform: translateY(-6px); 
+      border-color: rgba(255,255,255,0.28); 
+      box-shadow: 0 16px 36px rgba(0,0,0,0.5);
+    }
+    .tc-media {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      background: #050806;
+    }
+    .tc-media img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover;
+      object-position: center;
+      border-radius: 8px;
+      display: block;
+      transition: transform 0.6s var(--ease);
+    }
+    .tc:hover .tc-media img {
+      transform: scale(1.06);
+    }
+    .tc-body { 
+      padding: 1.4rem 0.6rem 0.6rem; 
+      flex: 1; 
+      display: flex; 
+      flex-direction: column; 
+    }
+    .tc-tag {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: 0.3rem 0.7rem;
+      border-radius: 4px; margin-bottom: 0.9rem; display: inline-block; align-self: flex-start;
+    }
+    .tag-adv { background: rgba(15,76,58,0.5); color: #87e0c1; }
+    .tag-cul { background: rgba(194,155,56,0.3); color: var(--gold); }
+    .tag-lux { background: rgba(184,93,56,0.3); color: #f5b098; }
+    .tag-sindh { background: rgba(139,30,30,0.4); color: #ff9b9b; }
+
+    .tc-body h3 { 
+      font-size: 1.3rem; 
+      font-weight: 600; 
+      margin-bottom: 0.6rem; 
+      line-height: 1.3;
+      min-height: 3.3rem; 
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .tc-desc { 
+      font-size: 0.9rem; 
+      color: rgba(255,255,255,0.68); 
+      line-height: 1.7; 
+      margin-bottom: 1.2rem;
+      min-height: 4.5rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .tc-meta { 
+      font-size: 0.8rem; 
+      color: rgba(255,255,255,0.55); 
+      margin-bottom: 1.2rem; 
+      display: flex; 
+      gap: 1.2rem; 
+      margin-top: auto; 
+    }
+    .tc-footer {
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+      padding-top: 1.2rem; 
+      border-top: 1px solid var(--border-dark);
+    }
+    .tc-price { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+    .tc-price strong { display: block; font-size: 1.25rem; color: #fff; font-weight: 700; margin-top: 0.1rem; }
+
+    /* PROCESS SECTION */
+    .dial-process-section {
+      background: radial-gradient(circle at 65% 50%, rgba(15, 76, 58, 0.28) 0%, #060907 72%);
+      padding: 6.5rem 6% 8rem;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--border-dark);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .dial-process-stage {
+      max-width: 1340px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 1.35fr;
+      gap: 4.5rem;
+      align-items: center;
+      min-height: 640px;
+    }
+    .dial-details-panel {
+      position: relative;
+    }
+    .dial-sub-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.76rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .dial-sub-badge::before {
+      content: '';
+      width: 22px;
+      height: 2px;
+      background: var(--gold);
+    }
+    .dial-main-h2 {
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 1.8rem;
+      letter-spacing: -1px;
+    }
+    .dial-main-h2 span {
+      color: var(--gold);
+    }
+    .dial-step-card {
+      background: #0d1712;
+      border: 1px solid rgba(194, 155, 56, 0.35);
+      border-radius: 18px;
+      padding: 2.2rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), inset 0 0 30px rgba(15, 76, 58, 0.35);
+      transition: all 0.45s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+    .dial-step-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: linear-gradient(180deg, var(--gold), var(--emerald-light));
+    }
+    .dial-step-indicator {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .dial-num-badge {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #0c120e;
+      background: var(--gold);
+      border: 1px solid #ffd466;
+      padding: 0.3rem 0.9rem;
+      border-radius: 30px;
+      box-shadow: 0 0 15px var(--gold-glow);
+    }
+    .dial-step-title {
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.8rem;
+    }
+    .dial-step-text {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      min-height: 85px;
+    }
+    .dial-controls {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .dial-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-dark);
+      color: #fff;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s var(--ease);
+    }
+    .dial-btn:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #0c120e;
+      transform: scale(1.08);
+    }
+    .dial-wheel-arena {
+      position: relative;
+      width: 580px;
+      height: 580px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dial-outer-track {
+      position: absolute;
+      width: 540px;
+      height: 540px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      pointer-events: none;
+    }
+    .dial-capsule-track {
+      position: absolute;
+      width: 440px;
+      height: 440px;
+      border-radius: 50%;
+      border: 24px solid rgba(15, 76, 58, 0.35);
+      box-shadow: 0 0 45px rgba(15, 76, 58, 0.5);
+      pointer-events: none;
+    }
+    .dial-rotator-disc {
+      position: absolute;
+      width: 440px;
+      height: 440px;
+      border-radius: 50%;
+      transition: transform 0.8s cubic-bezier(0.2, 0.9, 0.3, 1);
+    }
+    .dial-node {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      cursor: pointer;
+    }
+    .dial-node-capsule {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      white-space: nowrap;
+      transition: transform 0.4s var(--ease);
+    }
+    .dial-pill-button {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 0 4px rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--teal);
+      transition: all 0.35s var(--ease);
+    }
+    .dial-node.active .dial-pill-button {
+      background: var(--gold);
+      color: #080d0a;
+      box-shadow: 0 0 35px var(--gold-glow), 0 0 0 6px rgba(194, 155, 56, 0.4);
+      transform: scale(1.15);
+    }
+    .dial-node-label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: 0.5px;
+      transition: color 0.3s, transform 0.3s;
+    }
+    .dial-node.active .dial-node-label {
+      color: #ffffff;
+      font-weight: 700;
+      transform: translateX(4px);
+    }
+    .dial-hub-core {
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      background: #091510;
+      border: 2px solid var(--teal);
+      box-shadow: 0 0 50px rgba(15, 76, 58, 0.85);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.2rem;
+      z-index: 5;
+      pointer-events: none;
+    }
+    .dial-hub-core::before {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(45, 212, 191, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: pulseGlow 3s infinite ease-in-out;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.4; transform: scale(0.9); }
+      50% { opacity: 0.9; transform: scale(1.15); }
+    }
+    .hub-brand-name {
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: 4px;
+      color: #ffffff;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+    .hub-brand-sub {
+      font-size: 0.76rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+      margin-top: 0.4rem;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    @media (max-width: 1080px) {
+      .dial-process-stage {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+      .dial-details-panel {
+        text-align: center;
+      }
+      .dial-step-card::after {
+        display: none;
+      }
+      .dial-controls {
+        justify-content: center;
+      }
+    }
+    @media (max-width: 640px) {
+      .dial-wheel-arena {
+        width: 360px;
+        height: 360px;
+      }
+      .dial-outer-track {
+        width: 340px;
+        height: 340px;
+      }
+      .dial-capsule-track, .dial-rotator-disc {
+        width: 280px;
+        height: 280px;
+      }
+      .dial-hub-core {
+        width: 160px;
+        height: 160px;
+      }
+      .hub-brand-name {
+        font-size: 1.1rem;
+      }
+      .dial-pill-button {
+        width: 46px;
+        height: 46px;
+        font-size: 0.95rem;
+      }
+      .dial-node-label {
+        display: none;
+      }
+    }
+
+    /* REVIEWS: 3D STACKED PASSPORT DECK */
+    .reviews-stage-section {
+      background: radial-gradient(circle at 50% 20%, rgba(20, 30, 24, 0.8) 0%, #060907 80%);
+      padding: 5rem 6% 7rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .reviews-deck-container {
+      position: relative;
+      max-width: 1200px;
+      height: 600px;
+      margin: 2rem auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1400px;
+    }
+    .card-deck-track {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .passport-card {
+      position: absolute;
+      width: 320px;
+      background: #ffffff;
+      color: #121815;
+      border-radius: 28px;
+      padding: 14px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 255, 255, 0.05);
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), 
+                  opacity 0.65s ease, 
+                  filter 0.65s ease;
+      will-change: transform, opacity;
+    }
+    .passport-card.pos-center {
+      transform: translateX(0) translateZ(120px) scale(1.05);
+      opacity: 1;
+      filter: blur(0px) brightness(1);
+      z-index: 5;
+    }
+    .passport-card.pos-left-1 {
+      transform: translateX(-240px) translateZ(40px) scale(0.92);
+      opacity: 0.9;
+      filter: blur(0.5px) brightness(0.95);
+      z-index: 4;
+    }
+    .passport-card.pos-right-1 {
+      transform: translateX(240px) translateZ(40px) scale(0.92);
+      opacity: 0.9;
+      filter: blur(0.5px) brightness(0.95);
+      z-index: 4;
+    }
+    .passport-card.pos-left-2 {
+      transform: translateX(-430px) translateZ(-60px) scale(0.82);
+      opacity: 0.65;
+      filter: blur(1.5px) brightness(0.8);
+      z-index: 3;
+    }
+    .passport-card.pos-right-2 {
+      transform: translateX(430px) translateZ(-60px) scale(0.82);
+      opacity: 0.65;
+      filter: blur(1.5px) brightness(0.8);
+      z-index: 3;
+    }
+    .passport-card.pos-hidden {
+      transform: translateX(0) translateZ(-200px) scale(0.65);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .passport-cover {
+      width: 100%;
+      height: 200px;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+    .passport-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .passport-tag-pill {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(12, 18, 14, 0.7);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border-radius: 30px;
+    }
+    .passport-body {
+      padding: 1.1rem 0.8rem 0.6rem;
+    }
+    .passport-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.4rem;
+    }
+    .passport-title {
+      font-size: 1.28rem;
+      font-weight: 700;
+      color: #0c120e;
+      line-height: 1.2;
+    }
+    .passport-location {
+      font-size: 0.75rem;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+    .passport-quote {
+      font-size: 0.84rem;
+      color: #475569;
+      line-height: 1.6;
+      height: 68px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .passport-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      padding: 0.65rem 0.4rem;
+      background: #f8fafc;
+      border-radius: 14px;
+      text-align: center;
+      margin-bottom: 1.1rem;
+    }
+    .metric-col span {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #94a3b8;
+      letter-spacing: 0.5px;
+    }
+    .metric-col strong {
+      font-size: 0.88rem;
+      color: #0f172a;
+      font-weight: 700;
+      margin-top: 2px;
+      display: block;
+    }
+    .metric-col.accent strong {
+      color: var(--teal);
+    }
+    .passport-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0.3rem;
+    }
+    .passport-author-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .passport-author-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .author-details-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+    .author-details-date {
+      font-size: 0.72rem;
+      color: #94a3b8;
+    }
+    .passport-flight-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #0f172a;
+      color: #ffffff;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
+    }
+    .passport-flight-btn:hover {
+      background: var(--gold);
+      color: #080d0a;
+      transform: scale(1.08);
+    }
+    .carousel-nav-arrows {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .c-arrow-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-dark);
+      color: #ffffff;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s var(--ease);
+    }
+    .c-arrow-btn:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #080d0a;
+      transform: scale(1.08);
+    }
+
+    @media (max-width: 900px) {
+      .reviews-deck-container {
+        height: 570px;
+      }
+      .passport-card.pos-left-2,
+      .passport-card.pos-right-2 {
+        display: none;
+      }
+      .passport-card.pos-left-1 {
+        transform: translateX(-160px) scale(0.88);
+      }
+      .passport-card.pos-right-1 {
+        transform: translateX(160px) scale(0.88);
+      }
+    }
+    @media (max-width: 560px) {
+      .passport-card {
+        width: 290px;
+      }
+      .passport-card.pos-left-1,
+      .passport-card.pos-right-1 {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+
+    /* FAQS SECTION */
+    .faq-showcase-section {
+      background: radial-gradient(circle at 50% 15%, rgba(15, 76, 58, 0.45) 0%, #060907 70%);
+      padding: 6.5rem 6% 8rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .faq-ambient-orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(55px);
+      z-index: 1;
+    }
+    .faq-orb-top {
+      top: -40px; right: 8%;
+      width: 220px; height: 220px;
+      background: rgba(234, 179, 8, 0.14);
+    }
+    .faq-orb-bottom {
+      bottom: 20px; left: 6%;
+      width: 260px; height: 260px;
+      background: rgba(15, 76, 58, 0.3);
+    }
+
+    .faq-stage-container {
+      position: relative;
+      z-index: 3;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .faq-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .faq-badge-tag::before {
+      content: '';
+      width: 22px;
+      height: 2px;
+      background: var(--gold);
+    }
+    .faq-hero-heading {
+      font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.1;
+      margin-bottom: 3.5rem;
+      text-align: center;
+      letter-spacing: -1px;
+    }
+    .faq-hero-heading span {
+      color: var(--gold);
+    }
+
+    .faq-pills-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      margin-bottom: 4rem;
+    }
+    .faq-pill-box {
+      background: #0d1510;
+      border: 1.5px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 4px 0 #070c09;
+      overflow: hidden;
+      transition: border-color 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+      position: relative;
+    }
+    .faq-pill-box:hover {
+      border-color: rgba(194, 155, 56, 0.45);
+      transform: translateY(-3px);
+      box-shadow: 0 20px 42px rgba(0, 0, 0, 0.75), 0 5px 0 var(--teal);
+    }
+    .faq-pill-box[open] {
+      border-color: var(--gold);
+      box-shadow: 0 22px 48px rgba(0, 0, 0, 0.8), 0 5px 0 var(--gold);
+      background: #0f1a14;
+    }
+
+    .faq-pill-box summary {
+      padding: 1.8rem 2.2rem;
+      font-size: 1.28rem;
+      font-weight: 700;
+      color: #ffffff;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .faq-pill-box summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq-chevron {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 0.95rem;
+      transition: transform 0.35s var(--ease), background 0.25s;
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+    .faq-pill-box:hover .faq-chevron {
+      background: rgba(194, 155, 56, 0.2);
+    }
+    .faq-pill-box[open] .faq-chevron {
+      transform: rotate(180deg);
+      background: var(--gold);
+      color: #080d0a;
+    }
+
+    .faq-answer-content {
+      padding: 0 2.2rem 2rem;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      font-weight: 300;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      margin-top: 0.4rem;
+      padding-top: 1.2rem;
+    }
+    .faq-answer-content strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .faq-bottom-callout {
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 2.8rem;
+    }
+    .faq-callout-sub {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+    .faq-callout-text {
+      font-size: 0.98rem;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 2rem;
+    }
+    .faq-btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 1.4rem;
+      flex-wrap: wrap;
+    }
+    .faq-chat-btn {
+      background: #ffffff;
+      color: #0c120e;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 0.9rem 2rem;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+    }
+    .faq-chat-btn:hover {
+      background: var(--gold);
+      color: #080d0a;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px var(--gold-glow);
+    }
+    .faq-link-pill {
+      background: rgba(15, 76, 58, 0.45);
+      color: #72d9b6;
+      border: 1px solid rgba(45, 212, 191, 0.35);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 0.9rem 2rem;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .faq-link-pill:hover {
+      background: var(--teal);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    /* =======================================================
+       PLAN YOUR JOURNEY: MODERN SPLIT STAGE (INSPIRATION MATCH)
+    ======================================================= */
+    .tix-plan-stage {
+      position: relative;
+      min-height: calc(100vh - 72px);
+      padding: 6.5rem 6% 8.5rem;
+      background: linear-gradient(180deg, rgba(8, 13, 10, 0.65) 0%, rgba(8, 13, 10, 0.92) 80%),
+                  radial-gradient(circle at 80% 30%, rgba(15, 76, 58, 0.45) 0%, transparent 60%),
+                  url('hero.png') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .tix-plan-grid {
+      max-width: 1360px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      position: relative;
+      z-index: 3;
+    }
+
+    /* Left Narrative Column */
+    .tix-narrative-box {
+      max-width: 620px;
+    }
+    .tix-pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.78rem;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+    .tix-pill-badge::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+    }
+    .tix-hero-title {
+      font-size: clamp(3rem, 5.5vw, 4.8rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.08;
+      margin-bottom: 1.6rem;
+      letter-spacing: -1.5px;
+    }
+    .tix-hero-title span {
+      color: var(--gold);
+    }
+    .tix-hero-sub {
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.85;
+      font-weight: 300;
+      margin-bottom: 2.5rem;
+    }
+    .tix-perks-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+    .tix-perks-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.96rem;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 400;
+    }
+    .tix-check-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      box-shadow: 0 0 10px rgba(15, 76, 58, 0.8);
+    }
+
+    /* Right Modern White Booking Card (Exact Tixvent Style) */
+    .tix-white-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 2.8rem 2.4rem;
+      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+    .tix-form-field {
+      margin-bottom: 1.3rem;
+      position: relative;
+    }
+    .tix-field-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #1e293b;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.45rem;
+      text-transform: uppercase;
+    }
+    .tix-input-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .tix-input-box input,
+    .tix-input-box select,
+    .tix-input-box textarea {
+      width: 100%;
+      border: 1.5px solid #e2e8f0;
+      background: #f8fafc;
+      padding: 0.95rem 1.2rem;
+      border-radius: 12px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      color: #0f172a;
+      outline: none;
+      transition: all 0.25s var(--ease);
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .tix-input-box select {
+      cursor: pointer;
+      padding-right: 2.8rem;
+    }
+    .tix-input-box input:focus,
+    .tix-input-box select:focus,
+    .tix-input-box textarea:focus {
+      border-color: var(--teal);
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(15, 76, 58, 0.12);
+    }
+    .tix-select-chevron {
+      position: absolute;
+      right: 1.2rem;
+      pointer-events: none;
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+
+    .tix-submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--gold), #d4af37);
+      color: #080d0a;
+      border: none;
+      padding: 1.15rem;
+      border-radius: 14px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s var(--ease);
+      box-shadow: 0 10px 25px var(--gold-glow);
+      margin-top: 0.6rem;
+    }
+    .tix-submit-btn:hover {
+      background: linear-gradient(135deg, #e5b83b, #ecc440);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(234, 179, 8, 0.55);
+    }
+
+    /* Trust & Sponsor Logos Row at Bottom */
+    .tix-sponsors-strip {
+      max-width: 1360px;
+      margin: 4.5rem auto 0;
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+      position: relative;
+      z-index: 3;
+    }
+    .tix-sponsor-kicker {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+    .tix-badges-deck {
+      display: flex;
+      align-items: center;
+      gap: 2.8rem;
+      flex-wrap: wrap;
+    }
+    .tix-badge-unit {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.45);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .tix-badge-unit:hover {
+      color: #ffffff;
+    }
+    .tix-badge-symbol {
+      color: var(--gold);
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 1024px) {
+      .tix-plan-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+      .tix-narrative-box {
+        max-width: 100%;
+        text-align: center;
+      }
+      .tix-perks-list li {
+        justify-content: center;
+      }
+      .tix-white-card {
+        max-width: 540px;
+        margin: 0 auto;
+      }
+      .tix-sponsors-strip {
+        justify-content: center;
+        text-align: center;
+      }
+      .tix-badges-deck {
+        justify-content: center;
+      }
+    }
+
+    /* FOOTER */
+    footer {
+      background: #040805; padding: 5.5rem 6% 2.8rem;
+      border-top: 1px solid var(--border-dark); margin-top: auto;
+    }
+    .ft-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3.5rem; padding-bottom: 3.5rem;
+      border-bottom: 1px solid var(--border-dark);
+      max-width: 1340px;
+      margin: 0 auto;
+    }
+    .ft-logo {
+      font-size: 1.7rem; font-weight: 800; letter-spacing: 6px;
+      text-transform: uppercase; color: #fff; text-decoration: none;
+    }
+    .ft-logo span { color: var(--gold); }
+    .ft-desc { font-size: 0.92rem; color: rgba(255,255,255,0.55); line-height: 1.8; margin-top: 1.2rem; max-width: 320px; }
+    footer h4 { font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fff; margin-bottom: 1.4rem; }
+    footer ul { list-style: none; }
+    footer li { margin-bottom: 0.8rem; }
+    footer a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    footer a:hover { color: #fff; }
+    .ft-bottom { text-align: center; padding-top: 2rem; font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1200px) {
+      .rec-grid-4, .dest-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+      .sindh-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 992px) {
+      .hero-info-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .feature-banner { grid-template-columns: 1fr; }
+      .search-card-dark { grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+      .tours-grid { grid-template-columns: 1fr; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .ft-grid { grid-template-columns: 1fr 1fr; }
+      nav ul { display: none; }
+    }
+    @media (max-width: 680px) {
+      .rec-grid-4, .dest-gallery-grid, .sindh-grid, .why-grid { grid-template-columns: 1fr; }
+      .search-card-dark { grid-template-columns: 1fr; }
+      .ft-grid { grid-template-columns: 1fr; }
+      .faq-pill-box summary { padding: 1.4rem 1.6rem; font-size: 1.15rem; }
+      .faq-answer-content { padding: 0 1.6rem 1.6rem; font-size: 0.95rem; }
+      .tix-white-card { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="preloader-brand">SAF<span>AR</span></div>
+    <div class="loader-ring"></div>
+    <div class="loader-sub">Discover Pakistan — Valleys, Sufi Trails & Peaks</div>
+  </div>
+
+  <!-- ROUTE LOADER -->
+  <div id="route-loader">
+    <div class="route-spin"></div>
+  </div>
+
+  <!-- MINIMAL STICKY HEADER -->
+  <nav id="main-nav">
+    <a href="#home" class="nav-brand">
+      <span class="nav-tag-dot"></span> SAFAR
+    </a>
+    <ul>
+      <li><a href="#home" data-route="home">Home</a></li>
+      <li><a href="#destinations" data-route="destinations">Destinations</a></li>
+      <li><a href="#expeditions" data-route="expeditions">Expeditions</a></li>
+      <li><a href="#how-it-works" data-route="how-it-works">How It Works</a></li>
+      <li><a href="#reviews" data-route="reviews">Reviews</a></li>
+      <li><a href="#faq" data-route="faq">FAQ</a></li>
+      <li><a href="#plan" class="nav-cta" data-route="plan">Plan Your Journey</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- PAGE 1: HOME -->
+    <div id="page-home" class="page-view active-page">
+
+      <!-- FULL BLEED HERO -->
+      <section class="hero-cinematic">
+        <div class="hero-cat-bar">
+          <a href="#destinations" class="active">Karakoram Peaks</a>
+          <a href="#destinations">Glacial Lakes</a>
+          <a href="#destinations">Sindh Sufi Trail</a>
+          <a href="#destinations">Makran Coastal Highway</a>
+        </div>
+
+        <div class="hero-num-rail">
+          <div>03</div>
+          <div>04</div>
+          <div class="current">05</div>
+          <div>06</div>
+          <div>07</div>
+        </div>
+
+        <h1 class="hero-main-title">VISIT<br>PAKISTAN</h1>
+
+        <div class="hero-info-grid">
+          <div class="hero-info-card">
+            <h4>Hunza & Karakoram</h4>
+            <p>Passu Cones and the turquoise waters of Attabad nestled along the 8th wonder of the world.</p>
+          </div>
+          <div class="hero-info-card">
+            <h4>Deosai & Baltistan</h4>
+            <p>The second highest plateau on earth, bordered by snow-clad ridges and Tibetan-influenced fortresses.</p>
+          </div>
+          <div class="hero-info-card">
+            <h4>Sindh & Indus Valley</h4>
+            <p>Ancient Mohenjo-daro ruins, Sufi shrines in Sehwan & Bhit Shah, and misty sunsets on Gorakh Hill Station.</p>
+          </div>
+        </div>
+
+        <a href="#destinations" class="hero-swipe-cue">Explore Valleys & Trails &gt;&gt;</a>
+      </section>
+
+      <!-- SEARCH FILTER BAR -->
+      <div class="search-strip">
+        <div class="search-card-dark">
+          <div class="sf-dark">
+            <label>Destination</label>
+            <input type="text" id="homeSearchQuery" placeholder="e.g. Gorakh, Mohenjo-daro, Hunza…" />
+          </div>
+          <div class="sf-dark">
+            <label>Departure</label>
+            <input type="date" />
+          </div>
+          <div class="sf-dark">
+            <label>Return</label>
+            <input type="date" />
+          </div>
+          <div class="sf-dark">
+            <label>Region Style</label>
+            <select id="homeRegionSelect">
+              <option value="all">All Regions</option>
+              <option value="north">Gilgit-Baltistan (Peaks)</option>
+              <option value="sindh">Sindh (Sufi & Heritage)</option>
+              <option value="kp">Khyber Pakhtunkhwa (Valleys)</option>
+              <option value="balochistan">Balochistan (Coast)</option>
+            </select>
+          </div>
+          <div>
+            <button class="nav-cta" style="border:none; cursor:pointer; height:46px; width:100%; font-size:0.9rem;" onclick="runSearch()">Find Tours →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4-COLUMN MODERN PINTEREST-INSPIRED DESTINATION CARDS -->
+      <section class="dest-rec-section">
+        <div class="section-lead-center">
+          <div class="sec-sub-kicker">Curated Recommendations</div>
+          <h2 class="sec-head-bold">Destination Recommendations</h2>
+        </div>
+
+        <div class="rec-grid-4">
+          
+          <!-- Card 1: Hunza & Passu Cones -->
+          <a href="#destinations" class="rec-card-modern reveal-card">
+            <img class="rec-bg-img" src="https://i.pinimg.com/736x/36/1e/61/361e61064549657d4322cb3cddfece68.jpg" alt="Passu Cones Hunza Valley Gilgit-Baltistan"[cite: 3, 4]/>
+            <div class="rec-card-overlay"></div>
+            
+            <div class="rec-top-row">
+              <span class="rec-pill-rank">1st Place</span>
+              <div class="rec-num-chip">01</div>
+            </div>
+
+            <div class="rec-bottom-content">
+              <div class="rec-region-sub">Gilgit-Baltistan</div>
+              <h3 class="rec-main-title">Hunza & Passu Cones</h3>
+              <div class="rec-hover-btn">
+                <span>Explore Route</span>
+                <span>↗</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 2: Gorakh Hill Station -->
+          <a href="#destinations" class="rec-card-modern reveal-card">
+            <img class="rec-bg-img" src="https://i.pinimg.com/736x/3d/ef/6c/3def6c88d8274434ebeb84cf59049367.jpg" alt="Gorakh Hill Station Sindh Kirthar Mountains"[cite: 3, 4]/>
+            <div class="rec-card-overlay"></div>
+            
+            <div class="rec-top-row">
+              <span class="rec-pill-rank">2nd Place</span>
+              <div class="rec-num-chip">02</div>
+            </div>
+
+            <div class="rec-bottom-content">
+              <div class="rec-region-sub">Sindh Highlands</div>
+              <h3 class="rec-main-title">Gorakh Hill Station</h3>
+              <div class="rec-hover-btn">
+                <span>Explore Route</span>
+                <span>↗</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 3: Skardu & Deosai Plains -->
+          <a href="#destinations" class="rec-card-modern reveal-card">
+            <img class="rec-bg-img" src="https://i.pinimg.com/736x/63/39/5b/63395b246160f0cff7828b580ab20315.jpg" alt="Shangrilla Resort & Skardu Baltistan"[cite: 3, 4]/>
+            <div class="rec-card-overlay"></div>
+            
+            <div class="rec-top-row">
+              <span class="rec-pill-rank">3rd Place</span>
+              <div class="rec-num-chip">03</div>
+            </div>
+
+            <div class="rec-bottom-content">
+              <div class="rec-region-sub">Baltistan Plateau</div>
+              <h3 class="rec-main-title">Skardu & Deosai Plains</h3>
+              <div class="rec-hover-btn">
+                <span>Explore Route</span>
+                <span>↗</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 4: Mohenjo-daro -->
+          <a href="#destinations" class="rec-card-modern reveal-card">
+            <img class="rec-bg-img" src="https://i.pinimg.com/736x/e7/d9/66/e7d966077c7e8b699a2579f31296b4f9.jpg" alt="Mohenjo-daro Archaeological Stupa Sindh Pakistan"[cite: 3, 4]/>
+            <div class="rec-card-overlay"></div>
+            
+            <div class="rec-top-row">
+              <span class="rec-pill-rank">4th Place</span>
+              <div class="rec-num-chip">04</div>
+            </div>
+
+            <div class="rec-bottom-content">
+              <div class="rec-region-sub">Indus Valley · Sindh</div>
+              <h3 class="rec-main-title">Mohenjo-daro Citadel</h3>
+              <div class="rec-hover-btn">
+                <span>Explore Route</span>
+                <span>↗</span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- SINDH HERITAGE SPOTLIGHT -->
+      <section class="sindh-spotlight">
+        <div class="section-lead-center" style="margin-bottom:1.5rem;">
+          <div class="sec-sub-kicker" style="color:var(--gold); font-size: 0.95rem;">ancient cradles & misty highlands</div>
+          <h2 class="sec-head-bold" style="text-transform:uppercase; font-size: clamp(2.4rem, 4.5vw, 3.6rem);">The Untold Splendor of Sindh</h2>
+        </div>
+        <p style="text-align:center;max-width:760px;margin:0 auto;color:rgba(255,255,255,0.75);font-size:1.1rem;line-height:1.9; font-weight: 300;">
+          Beyond the northern glaciers lies the 5,000-year-old soul of Pakistan. From the chill winds of Gorakh Hill to the blue-tiled Mughal domes of Thatta and mystic Sufi qawwalis in Sehwan Sharif.
+        </p>
+
+        <div class="sindh-grid">
+          <div class="sindh-box reveal-card">
+            <div class="sindh-media">
+              <img src="https://i.pinimg.com/1200x/ab/c6/53/abc6534f69da1934ea9b70116b54f254.jpg" alt="Khirthar Range Sindh"[cite: 3, 4]/>
+            </div>
+            <div class="sindh-body">
+              <span class="sindh-tag">Sindh Highlands · 5,688 Ft</span>
+              <h3>Gorakh Hill Station & Kirthar Escarpment</h3>
+              <p>Known as the 'Murree of Sindh', experience sub-zero winter temperatures, thrilling 4x4 climbs from Wahi Pandhi, and crystalline starry night skies.</p>
+            </div>
+          </div>
+
+          <div class="sindh-box reveal-card">
+            <div class="sindh-media">
+              <img src="https://i.pinimg.com/736x/72/4a/b7/724ab7b38cdd6225f6d1f9755ce4267e.jpg" alt="Mohenjo-daro Buddhist Stupa and Bronze Age Ruins"[cite: 3, 4]/>
+            </div>
+            <div class="sindh-body">
+              <span class="sindh-tag">UNESCO World Heritage · 2500 BCE</span>
+              <h3>Mohenjo-daro & Kot Diji Fort</h3>
+              <p>Walk among the world's oldest planned urban settlements. Explore ancient drainage networks, the Great Bath, and the majestic Talpur fortresses of Khairpur.</p>
+            </div>
+          </div>
+
+          <div class="sindh-box reveal-card">
+            <div class="sindh-media">
+              <img src="https://i.pinimg.com/736x/d6/74/18/d67418643072942c072864f8c09ed20d.jpg" alt="Historical Islamic Architecture in Thatta and Badshahi"[cite: 3, 4]/>
+            </div>
+            <div class="sindh-body">
+              <span class="sindh-tag">Necropolis & Mughal Art</span>
+              <h3>Makli Necropolis & Shah Jahan Mosque</h3>
+              <p>Over 500,000 intricate sandstone tombs spanning 400 years of dynastic rule, coupled with the 93 blue-tiled domes of Thatta’s acoustic wonder.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY CHOOSE SAFAR STRIP -->
+      <section class="why-safar-strip">
+        <div class="section-lead-center" style="margin-bottom:1.5rem;">
+          <div class="sec-sub-kicker" style="font-size: 0.9rem;">safe · verified · authentic</div>
+          <h2 class="sec-head-bold" style="text-transform:uppercase; font-size: clamp(2.2rem, 4vw, 3.2rem);">The Safar Standard</h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-item reveal-card">
+            <div class="why-icon">🚙</div>
+            <h4>Dedicated 4x4 Fleet</h4>
+            <p>Toyota Land Cruisers & high-clearance Prados maintained specifically for northern passes and Kirthar mountain ascents.</p>
+          </div>
+          <div class="why-item reveal-card">
+            <div class="why-icon">🛡️</div>
+            <h4>Native Escorts & Guides</h4>
+            <p>Led by local guides from Hunza, Skardu, Thatta, and Larkana with deep cultural familiarity and high-altitude safety training.</p>
+          </div>
+          <div class="why-item reveal-card">
+            <div class="why-icon">🏨</div>
+            <h4>Handpicked Heritage Stays</h4>
+            <p>From Serena Shigar Fort palace suites to heated high-altitude glamping pods and private resthouses in Gorakh.</p>
+          </div>
+          <div class="why-item reveal-card">
+            <div class="why-icon">📡</div>
+            <h4>24/7 Ground Concierge</h4>
+            <p>Live satellite monitoring, prompt flight cancellation backup convoys, and personalized coordinators based in Karachi and Islamabad.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRAVEL AND ENJOY STORY BANNER -->
+      <section class="feature-banner">
+        <div>
+          <h2>TRAVEL AND<br>ENJOY YOUR<br>HOMELAND</h2>
+          <a href="#plan" class="feature-cue">
+            <span class="cue-circle">▶</span> choose your expedition
+          </a>
+          <p class="feature-desc">
+            From the 8,000-meter giants of the Karakoram to the ancient Indus River trails, Safar designs bespoke itineraries with verified 4x4 convoys, local native hosts, and luxury heritage accommodations.
+          </p>
+          <a href="#plan" class="nav-cta" style="display:inline-block; font-size: 0.95rem; padding: 0.8rem 1.8rem;">Plan With Concierge →</a>
+        </div>
+
+        <div class="feature-thumbnails">
+          <div class="feature-thumb-box">
+            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800" alt="Balochistan Hingol Princess of Hope"[cite: 3, 4]/>
+          </div>
+          <div class="feature-thumb-box">
+            <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=800" alt="Serena Shigar Fort Baltistan"[cite: 3, 4]/>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- PAGE 2: DESTINATIONS -->
+    <div id="page-destinations" class="page-view">
+      <div class="inner-header">
+        <div style="font-size:.8rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">Explore Regions</div>
+        <h1>Iconic Destinations</h1>
+      </div>
+      <div class="inner-body">
+        <div class="filter-tabs">
+          <button class="filter-btn active" onclick="filterDestinations('all', this)">All Pakistan</button>
+          <button class="filter-btn" onclick="filterDestinations('sindh', this)">Sindh Heritage & Gorakh</button>
+          <button class="filter-btn" onclick="filterDestinations('north', this)">Gilgit-Baltistan</button>
+          <button class="filter-btn" onclick="filterDestinations('kp', this)">Khyber Pakhtunkhwa</button>
+          <button class="filter-btn" onclick="filterDestinations('coast', this)">Balochistan Coast</button>
+        </div>
+
+        <div class="dest-gallery-grid" id="destGrid">
+          
+          <div class="dest-gallery-card reveal-card" data-region="sindh">
+            <img src="https://i.pinimg.com/736x/3d/ef/6c/3def6c88d8274434ebeb84cf59049367.jpg" alt="Gorakh Hill Station Sindh"[cite: 3, 4]/>
+            <div class="dest-gallery-overlay"></div>
+            <div class="dest-gallery-info">
+              <div class="dest-gallery-rank">Sindh Highlands</div>
+              <h3 class="dest-gallery-title">Gorakh Hill Station (5,688 ft)</h3>
+            </div>
+          </div>
+
+          <div class="dest-gallery-card reveal-card" data-region="sindh">
+            <img src="https://i.pinimg.com/736x/c9/63/dd/c963ddcbfd8f11f20d6f1fc1936f6bb0.jpg" alt="Mohenjo-daro Archaeological Ruins Larkana"[cite: 3, 4]/>
+            <div class="dest-gallery-overlay"></div>
+            <div class="dest-gallery-info">
+              <div class="dest-gallery-rank">Ancient Indus</div>
+              <h3 class="dest-gallery-title">Mohenjo-daro Ruins & Stupa</h3>
+            </div>
+          </div>
+
+          <div class="dest-gallery-card reveal-card" data-region="sindh">
+            <img src="https://i.pinimg.com/736x/d6/74/18/d67418643072942c072864f8c09ed20d.jpg" alt="Thatta Makli Necropolis"[cite: 3, 4]/>
+            <div class="dest-gallery-overlay"></div>
+            <div class="dest-gallery-info">
+              <div class="dest-gallery-rank">Sindh Heritage</div>
+              <h3 class="dest-gallery-title">Makli & Shah Jahan Mosque</h3>
+            </div>
+          </div>
+
+          <div class="dest-gallery-card reveal-card" data-region="sindh">
+            <img src="https://i.pinimg.com/736x/41/52/04/4152045e2c83339e1d13f8160370aede.jpg" alt="Ranikot Fort Sindh"[cite: 3, 4]/>
+            <div class="dest-gallery-overlay"></div>
+            <div class="dest-gallery-info">
+              <div class="dest-gallery-rank">Jamshoro · Sindh</div>
+              <h3 class="dest-gallery-title">Ranikot Fort (Great Wall)</h3>
+            </div>
+          </div>
+
+          <div class="dest-gallery-card reveal-card" data-region="north">
+            <img src="https://i.pinimg.com/736x/6d/23/e7/6d23e7a656a39a3432ca58b853c69712.jpg" alt="Hunza Passu Cones"[cite: 3, 4]/>
+            <div class="dest-gallery-overlay"></div>
+            <div class="dest-gallery-info">
+              <div class="dest-gallery-rank">Gilgit-Baltistan</div>
+              <h3 class="dest-gallery-title">Hunza Valley & Khunjerab Pass</h3>
+            </div>
+          </div>
+
+          <div class="dest-gallery-card reveal-card" data-region="north">
+            <img src="https://i.pinimg.com/736x/11/2e/72/112e72edcb8db2fe2275e99522f2afd0.jpg" alt="Skardu Deosai Plains"[cite: 3, 4]/>
+            <div class="dest-gallery-overlay"></div>
+            <div class="dest-gallery-info">
+              <div class="dest-gallery-rank">Baltistan</div>
+              <h3 class="dest-gallery-title">Skardu & Deosai National Park</h3>
+            </div>
+          </div>
+
+          <div class="dest-gallery-card reveal-card" data-region="kp">
+            <img src="https://i.pinimg.com/736x/85/5b/97/855b97123de8f3e14e3ba8d03c52de67.jpg" alt="Swat Kalam Valley"[cite: 3, 4]/>
+            <div class="dest-gallery-overlay"></div>
+            <div class="dest-gallery-info">
+              <div class="dest-gallery-rank">Khyber Pakhtunkhwa</div>
+              <h3 class="dest-gallery-title">Swat Valley, Kalam & Kumrat</h3>
+            </div>
+          </div>
+
+          <div class="dest-gallery-card reveal-card" data-region="coast">
+            <img src="https://i.pinimg.com/1200x/7a/65/f4/7a65f4065833671c7aa84f86fe8d693f.jpg" alt="Kund Malir Balochistan"[cite: 3, 4]/>
+            <div class="dest-gallery-overlay"></div>
+            <div class="dest-gallery-info">
+              <div class="dest-gallery-rank">Balochistan</div>
+              <h3 class="dest-gallery-title">Kund Malir & Hingol National Park</h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 3: EXPEDITIONS -->
+    <div id="page-expeditions" class="page-view">
+      <div class="inner-header">
+        <div style="font-size:.8rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">Handcrafted Itineraries</div>
+        <h1>Curated Expeditions & Tours</h1>
+      </div>
+      <div class="inner-body">
+        <div class="filter-tabs">
+          <button class="filter-btn active" onclick="filterTours('all', this)">All Tours</button>
+          <button class="filter-btn" onclick="filterTours('sindh', this)">Sindh Circuits</button>
+          <button class="filter-btn" onclick="filterTours('north', this)">Northern Peaks</button>
+          <button class="filter-btn" onclick="filterTours('luxury', this)">Luxury Fort Stays</button>
+        </div>
+
+        <div class="tours-grid" id="toursGrid">
+          <div class="tc reveal-card" data-category="sindh">
+            <div class="tc-media">
+              <img src="https://i.pinimg.com/1200x/d4/b4/8a/d4b48aa465bc2caefd547ca8053c7473.jpg" alt="Gorakh Hill Station Sindh Sunset"[cite: 3, 4]/>
+            </div>
+            <div class="tc-body">
+              <span class="tc-tag tag-sindh">Sindh Highland</span>
+              <h3>Gorakh Hill Stargazing & Wahi Pandhi 4x4 Safari</h3>
+              <p class="tc-desc">Ascend to Sindh's coldest peak at 5,688 ft via rugged 4x4 jeeps. Includes cliffside bonfire camping, panoramic Kirthar range views, and midnight stargazing.</p>
+              <div class="tc-meta"><span>📍 Dadu, Sindh</span><span>📅 2 Days</span><span>👥 Groups & Families</span></div>
+              <div class="tc-footer">
+                <div class="tc-price">From<strong>PKR 22,500</strong></div>
+                <a href="#plan" class="nav-cta" onclick="prefillDestination('Gorakh Hill Stargazing (2 Days)')">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tc reveal-card" data-category="sindh">
+            <div class="tc-media">
+              <img src="https://i.pinimg.com/1200x/09/b2/76/09b276fb516163ae5c7437389cbba16c.jpg" alt="Shah Jahan Mosque Thatta"[cite: 3, 4]/>
+            </div>
+            <div class="tc-body">
+              <span class="tc-tag tag-sindh">Sufi & History</span>
+              <h3>Sufi Trail: Thatta, Bhit Shah & Sehwan Sharif</h3>
+              <p class="tc-desc">Visit Makli Necropolis, Shah Jahan Mosque, and experience authentic Sufi mystic qawwalis and dhamal at Shah Abdul Latif Bhittai and Lal Shahbaz Qalandar.</p>
+              <div class="tc-meta"><span>📍 Thatta & Matiari</span><span>📅 3 Days</span><span>👥 Max 12</span></div>
+              <div class="tc-footer">
+                <div class="tc-price">From<strong>PKR 38,000</strong></div>
+                <a href="#plan" class="nav-cta" onclick="prefillDestination('Sufi Trail: Thatta & Sehwan (3 Days)')">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tc reveal-card" data-category="sindh">
+            <div class="tc-media">
+              <img src="https://i.pinimg.com/736x/e7/d9/66/e7d966077c7e8b699a2579f31296b4f9.jpg" alt="Mohenjo-daro Archaeological Stupa Ruins Sindh Pakistan"[cite: 3, 4]/>
+            </div>
+            <div class="tc-body">
+              <span class="tc-tag tag-sindh">Archaeology Trail</span>
+              <h3>Indus Civilization: Mohenjo-daro, Kot Diji & Sukkur Barrage</h3>
+              <p class="tc-desc">Guided tour through 5,000-year-old Bronze Age streets, Great Bath, the Great Stupa, Kot Diji Fort, and riverboat cruise along Sadhu Bela temple on the Indus River.</p>
+              <div class="tc-meta"><span>📍 Larkana & Sukkur</span><span>📅 4 Days</span><span>👥 Heritage Buffs</span></div>
+              <div class="tc-footer">
+                <div class="tc-price">From<strong>PKR 49,000</strong></div>
+                <a href="#plan" class="nav-cta" onclick="prefillDestination('Mohenjo-daro & Sukkur (4 Days)')">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tc reveal-card" data-category="north">
+            <div class="tc-media">
+              <img src="https://i.pinimg.com/1200x/3b/19/1d/3b191d6452715b555993a6bbd82ccd49.jpg" alt="Fairy Meadows Nanga Parbat Base Camp"[cite: 3, 4]/>
+            </div>
+            <div class="tc-body">
+              <span class="tc-tag tag-adv">Adventure Trek</span>
+              <h3>Fairy Meadows & Nanga Parbat Base Camp</h3>
+              <p class="tc-desc">A bucket-list high-altitude trek to the base of the Killer Mountain (8,126m), complete with heated mountain huts and local Shina guides.</p>
+              <div class="tc-meta"><span>📍 Gilgit-Baltistan</span><span>📅 6 Days</span><span>👥 Max 10</span></div>
+              <div class="tc-footer">
+                <div class="tc-price">From<strong>PKR 98,000</strong></div>
+                <a href="#plan" class="nav-cta" onclick="prefillDestination('Fairy Meadows Trek (6 Days)')">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tc reveal-card" data-category="luxury">
+            <div class="tc-media">
+              <img src="https://i.pinimg.com/1200x/85/06/df/8506df0b7f077f73599202dbc7cafd39.jpg" alt="Serena Shigar Fort & Khaplu Palace Baltistan"[cite: 3, 4]/>
+            </div>
+            <div class="tc-body">
+              <span class="tc-tag tag-lux">Royal Heritage</span>
+              <h3>Serena Shigar Fort & Khaplu Palace Retreat</h3>
+              <p class="tc-desc">Stay in 400-year-old Raja suites restored by the Aga Khan Trust. Private airport chauffeuring, royal lawn courtyards, and candlelit orchard dining.</p>
+              <div class="tc-meta"><span>📍 Skardu Valley</span><span>📅 5 Days</span><span>👥 Couples & Luxury</span></div>
+              <div class="tc-footer">
+                <div class="tc-price">From<strong>PKR 245,000</strong></div>
+                <a href="#plan" class="nav-cta" onclick="prefillDestination('Serena Shigar & Khaplu Retreat (5 Days)')">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tc reveal-card" data-category="north">
+            <div class="tc-media">
+              <img src="https://i.pinimg.com/736x/36/1e/61/361e61064549657d4322cb3cddfece68.jpg" alt="Autumn Colors of Hunza & Passu Cones"[cite: 3, 4]/>
+            </div>
+            <div class="tc-body">
+              <span class="tc-tag tag-cul">Golden Season</span>
+              <h3>Autumn Colors of Hunza & Passu Cones</h3>
+              <p class="tc-desc">Witness apricot orchards turning deep gold along snow-dusted Karakoram ridges. Cross Hussaini Suspension Bridge, explore Baltit Fort, and cruise Attabad Lake.</p>
+              <div class="tc-meta"><span>📍 Hunza Valley</span><span>📅 7 Days</span><span>👥 Small Groups</span></div>
+              <div class="tc-footer">
+                <div class="tc-price">From<strong>PKR 115,000</strong></div>
+                <a href="#plan" class="nav-cta" onclick="prefillDestination('Hunza Autumn Tour (7 Days)')">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 4: HOW IT WORKS -->
+    <div id="page-how-it-works" class="page-view">
+      <section class="dial-process-section">
+        <div class="dial-process-stage">
+          <div class="dial-details-panel">
+            <div class="dial-sub-badge">SAFAR Operational Blueprint</div>
+            <h2 class="dial-main-h2">Curated Travel<br><span>Architecture.</span></h2>
+
+            <div class="dial-step-card" id="dialStepCard">
+              <div class="dial-step-indicator">
+                <span class="dial-num-badge" id="stepBadgeNum">01</span>
+                <span style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 2px; color: #a9a394;">Active Method</span>
+              </div>
+              <h3 class="dial-step-title" id="stepCardTitle">Route Conceptualization</h3>
+              <p class="dial-step-text" id="stepCardDesc">
+                Select your signature itinerary across Gilgit-Baltistan, Sindh, or Balochistan—or communicate tailored requests directly with our destination planners in Islamabad & Karachi.
+              </p>
+              <div class="dial-controls">
+                <button class="dial-btn" onclick="rotateDialStep(-1)" title="Previous Step">‹</button>
+                <button class="dial-btn" onclick="rotateDialStep(1)" title="Next Step">›</button>
+                <span style="font-size: 0.85rem; color: rgba(255,255,255,0.45); margin-left: 0.8rem;">Click or rotate node to preview</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dial-wheel-arena">
+            <div class="dial-outer-track"></div>
+            <div class="dial-capsule-track"></div>
+
+            <div class="dial-rotator-disc" id="dialRotatorDisc">
+              <div class="dial-node active" data-step="0" onclick="setDialStep(0)">
+                <div class="dial-node-capsule">
+                  <div class="dial-pill-button">01</div>
+                  <span class="dial-node-label">Easy Choice</span>
+                </div>
+              </div>
+
+              <div class="dial-node" data-step="1" onclick="setDialStep(1)">
+                <div class="dial-node-capsule">
+                  <div class="dial-pill-button">02</div>
+                  <span class="dial-node-label">Fleet Setup</span>
+                </div>
+              </div>
+
+              <div class="dial-node" data-step="2" onclick="setDialStep(2)">
+                <div class="dial-node-capsule">
+                  <div class="dial-pill-button">03</div>
+                  <span class="dial-node-label">Heritage Forts</span>
+                </div>
+              </div>
+
+              <div class="dial-node" data-step="3" onclick="setDialStep(3)">
+                <div class="dial-node-capsule">
+                  <div class="dial-pill-button">04</div>
+                  <span class="dial-node-label">Permit Security</span>
+                </div>
+              </div>
+
+              <div class="dial-node" data-step="4" onclick="setDialStep(4)">
+                <div class="dial-node-capsule">
+                  <div class="dial-pill-button">05</div>
+                  <span class="dial-node-label">Concierge Escort</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-hub-core">
+              <div class="hub-brand-name">SAFAR</div>
+              <div class="hub-brand-sub">Methodology</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- PAGE 5: REVIEWS -->
+    <div id="page-reviews" class="page-view">
+      <div class="inner-header">
+        <div style="font-size:.8rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">Verified Expeditions</div>
+        <h1>Stories from Our Travelers</h1>
+      </div>
+
+      <section class="reviews-stage-section">
+        <div class="reviews-deck-container">
+          <div class="card-deck-track" id="cardDeckTrack">
+
+            <div class="passport-card" data-index="0">
+              <div class="passport-cover">
+                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=700" alt="Attabad Lake Hunza"[cite: 3, 4]/>
+                <span class="passport-tag-pill">Northern Highlands</span>
+              </div>
+              <div class="passport-body">
+                <div class="passport-header-row">
+                  <h3 class="passport-title">Azure Lake Haven</h3>
+                </div>
+                <div class="passport-location">📍 Hunza & Attabad, Gilgit-Baltistan</div>
+                <p class="passport-quote">"Hunza and Attabad Lake were surreal. Our native driver Ali navigated every high pass effortlessly and introduced us to local hospitality."</p>
+                <div class="passport-metrics">
+                  <div class="metric-col">
+                    <span>Distance</span>
+                    <strong>740 KM</strong>
+                  </div>
+                  <div class="metric-col">
+                    <span>Altitude</span>
+                    <strong>2,438 M</strong>
+                  </div>
+                  <div class="metric-col accent">
+                    <span>Rating</span>
+                    <strong>★ 4.9</strong>
+                  </div>
+                </div>
+                <div class="passport-footer">
+                  <div class="passport-author-meta">
+                    <img class="passport-author-avatar" src="https://i.pravatar.cc/80?img=68" alt="Hamza Siddiqui"[cite: 3, 4]/>
+                    <div>
+                      <div class="author-details-name">Hamza & Ayesha</div>
+                      <div class="author-details-date">Autumn Tour</div>
+                    </div>
+                  </div>
+                  <button class="passport-flight-btn" title="Explore Route" onclick="location.hash='#expeditions'">✈</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="passport-card" data-index="1">
+              <div class="passport-cover">
+                <img src="https://i.pinimg.com/1200x/85/06/df/8506df0b7f077f73599202dbc7cafd39.jpg" alt="Shigar Palace Baltistan"[cite: 3, 4]/>
+                <span class="passport-tag-pill">Royal Heritage</span>
+              </div>
+              <div class="passport-body">
+                <div class="passport-header-row">
+                  <h3 class="passport-title">Fortress of Shigar</h3>
+                </div>
+                <div class="passport-location">📍 Serena Shigar Fort, Skardu</div>
+                <p class="passport-quote">"Stepping into the 400-year-old Raja suites was unforgettable. Safar handled domestic flight delays from Islamabad with a standby 4x4 backup without a hitch."</p>
+                <div class="passport-metrics">
+                  <div class="metric-col">
+                    <span>Distance</span>
+                    <strong>630 KM</strong>
+                  </div>
+                  <div class="metric-col">
+                    <span>Altitude</span>
+                    <strong>2,230 M</strong>
+                  </div>
+                  <div class="metric-col accent">
+                    <span>Rating</span>
+                    <strong>★ 5.0</strong>
+                  </div>
+                </div>
+                <div class="passport-footer">
+                  <div class="passport-author-meta">
+                    <img class="passport-author-avatar" src="https://i.pravatar.cc/80?img=12" alt="Tariq Mehmood"[cite: 3, 4]/>
+                    <div>
+                      <div class="author-details-name">Tariq Mehmood</div>
+                      <div class="author-details-date">Heritage Baltistan</div>
+                    </div>
+                  </div>
+                  <button class="passport-flight-btn" title="Explore Route" onclick="location.hash='#expeditions'">✈</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="passport-card" data-index="2">
+              <div class="passport-cover">
+                <img src="https://i.pinimg.com/1200x/d4/b4/8a/d4b48aa465bc2caefd547ca8053c7473.jpg" alt="Gorakh Hill Station Sindh"[cite: 3, 4]/>
+                <span class="passport-tag-pill">Sindh Highlands</span>
+              </div>
+              <div class="passport-body">
+                <div class="passport-header-row">
+                  <h3 class="passport-title">Midnight Escarpment</h3>
+                </div>
+                <div class="passport-location">📍 Gorakh Peak, Dadu Sindh</div>
+                <p class="passport-quote">"The 4x4 ascent from Wahi Pandhi was thrilling. Cozy cliffside camping, hot cardamom chai, and the coldest, most brilliant starry sky in Sindh."</p>
+                <div class="passport-metrics">
+                  <div class="metric-col">
+                    <span>Distance</span>
+                    <strong>420 KM</strong>
+                  </div>
+                  <div class="metric-col">
+                    <span>Altitude</span>
+                    <strong>1,734 M</strong>
+                  </div>
+                  <div class="metric-col accent">
+                    <span>Rating</span>
+                    <strong>★ 4.9</strong>
+                  </div>
+                </div>
+                <div class="passport-footer">
+                  <div class="passport-author-meta">
+                    <img class="passport-author-avatar" src="https://i.pravatar.cc/80?img=60" alt="Kashif Memon"[cite: 3, 4]/>
+                    <div>
+                      <div class="author-details-name">Kashif & Nida</div>
+                      <div class="author-details-date">Gorakh Stargaze</div>
+                    </div>
+                  </div>
+                  <button class="passport-flight-btn" title="Explore Route" onclick="location.hash='#expeditions'">✈</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="passport-card" data-index="3">
+              <div class="passport-cover">
+                <img src="https://i.pinimg.com/1200x/3b/19/1d/3b191d6452715b555993a6bbd82ccd49.jpg" alt="Nanga Parbat Base Camp"[cite: 3, 4]/>
+                <span class="passport-tag-pill">Adventure Base</span>
+              </div>
+              <div class="passport-body">
+                <div class="passport-header-row">
+                  <h3 class="passport-title">Nanga Parbat Ridge</h3>
+                </div>
+                <div class="passport-location">📍 Fairy Meadows, Diamer</div>
+                <p class="passport-quote">"Waking up right under the 8,126m Killer Mountain face was breathtaking. Heated pine log cabins, seasoned porters, and total safety."</p>
+                <div class="passport-metrics">
+                  <div class="metric-col">
+                    <span>Distance</span>
+                    <strong>520 KM</strong>
+                  </div>
+                  <div class="metric-col">
+                    <span>Altitude</span>
+                    <strong>3,300 M</strong>
+                  </div>
+                  <div class="metric-col accent">
+                    <span>Rating</span>
+                    <strong>★ 4.9</strong>
+                  </div>
+                </div>
+                <div class="passport-footer">
+                  <div class="passport-author-meta">
+                    <img class="passport-author-avatar" src="https://i.pravatar.cc/80?img=33" alt="Zainab Raza"[cite: 1]/>
+                    <div>
+                      <div class="author-details-name">Zainab Raza</div>
+                      <div class="author-details-date">Base Camp Trek</div>
+                    </div>
+                  </div>
+                  <button class="passport-flight-btn" title="Explore Route" onclick="location.hash='#expeditions'">✈</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="passport-card" data-index="4">
+              <div class="passport-cover">
+                <img src="https://i.pinimg.com/736x/e7/d9/66/e7d966077c7e8b699a2579f31296b4f9.jpg" alt="Mohenjo-daro Stupa"[cite: 3, 4]/>
+                <span class="passport-tag-pill">Bronze Age Ruins</span>
+              </div>
+              <div class="passport-body">
+                <div class="passport-header-row">
+                  <h3 class="passport-title">Indus Bronze Citadel</h3>
+                </div>
+                <div class="passport-location">📍 Mohenjo-daro & Sukkur, Sindh</div>
+                <p class="passport-quote">"Walking through 5,000-year-old streets with our licensed archaeologist brought ancient Indus engineering alive. Extraordinary curation."</p>
+                <div class="passport-metrics">
+                  <div class="metric-col">
+                    <span>Distance</span>
+                    <strong>480 KM</strong>
+                  </div>
+                  <div class="metric-col">
+                    <span>Era</span>
+                    <strong>2500 BCE</strong>
+                  </div>
+                  <div class="metric-col accent">
+                    <span>Rating</span>
+                    <strong>★ 4.8</strong>
+                  </div>
+                </div>
+                <div class="passport-footer">
+                  <div class="passport-author-meta">
+                    <img class="passport-author-avatar" src="https://i.pravatar.cc/80?img=47" alt="Dr. Bilal"[cite: 3, 4]/>
+                    <div>
+                      <div class="author-details-name">Dr. Bilal & Family</div>
+                      <div class="author-details-date">Sufi & Indus Circuit</div>
+                    </div>
+                  </div>
+                  <button class="passport-flight-btn" title="Explore Route" onclick="location.hash='#expeditions'">✈</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="passport-card" data-index="5">
+              <div class="passport-cover">
+                <img src="https://i.pinimg.com/1200x/7a/65/f4/7a65f4065833671c7aa84f86fe8d693f.jpg" alt="Kund Malir Balochistan"[cite: 3, 4]/>
+                <span class="passport-tag-pill">Arabian Coast</span>
+              </div>
+              <div class="passport-body">
+                <div class="passport-header-row">
+                  <h3 class="passport-title">Makran Ocean Dunes</h3>
+                </div>
+                <div class="passport-location">📍 Kund Malir & Hingol, Balochistan</div>
+                <p class="passport-quote">"Cruising the Makran Coastal Highway was mesmerizing. Golden sand dunes dropping straight into pristine turquoise seawater. Unrivaled serenity."</p>
+                <div class="passport-metrics">
+                  <div class="metric-col">
+                    <span>Distance</span>
+                    <strong>245 KM</strong>
+                  </div>
+                  <div class="metric-col">
+                    <span>Terrain</span>
+                    <strong>Coastal 4x4</strong>
+                  </div>
+                  <div class="metric-col accent">
+                    <span>Rating</span>
+                    <strong>★ 4.9</strong>
+                  </div>
+                </div>
+                <div class="passport-footer">
+                  <div class="passport-author-meta">
+                    <img class="passport-author-avatar" src="https://i.pravatar.cc/80?img=52" alt="Farhan Qureshi"/>
+                    <div>
+                      <div class="author-details-name">Farhan Qureshi</div>
+                      <div class="author-details-date">Coastal Escape</div>
+                    </div>
+                  </div>
+                  <button class="passport-flight-btn" title="Explore Route" onclick="location.hash='#expeditions'">✈</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="carousel-nav-arrows">
+          <button class="c-arrow-btn" onclick="rotateDeck(-1)" title="Previous Story">‹</button>
+          <button class="c-arrow-btn" onclick="rotateDeck(1)" title="Next Story">›</button>
+        </div>
+      </section>
+    </div>
+
+    <!-- PAGE 6: FAQ -->
+    <div id="page-faq" class="page-view">
+      <section class="faq-showcase-section">
+        <div class="faq-ambient-orb faq-orb-top"></div>
+        <div class="faq-ambient-orb faq-orb-bottom"></div>
+
+        <div class="faq-stage-container">
+          <div style="text-align: center;">
+            <div class="faq-badge-tag">Clarifications & Logistics</div>
+            <h2 class="faq-hero-heading">FAQs about <span>SAFAR!</span></h2>
+          </div>
+
+          <div class="faq-pills-stack">
+            <details class="faq-pill-box reveal-card" open>
+              <summary>
+                <span>What is SAFAR?</span>
+                <span class="faq-chevron">⌄</span>
+              </summary>
+              <div class="faq-answer-content">
+                <strong>A bespoke expedition and luxury travel concierge for Pakistan.</strong> We curate premium journeys across the high glacial valleys of Gilgit-Baltistan, ancient Indus civilizations in Sindh, and coastal routes in Balochistan with verified 4x4 Land Cruisers, licensed local guides, and luxury heritage stays.
+              </div>
+            </details>
+
+            <details class="faq-pill-box reveal-card">
+              <summary>
+                <span>Are domestic flights to Skardu and Gilgit included?</span>
+                <span class="faq-chevron">⌄</span>
+              </summary>
+              <div class="faq-answer-content">
+                <strong>Yes, round-trip flights from Islamabad can be included.</strong> Because northern mountain weather can occasionally delay flights, SAFAR maintains an immediate standby 4x4 Land Cruiser backup fleet via the Karakoram Highway so your trip itinerary proceeds uninterrupted.
+              </div>
+            </details>
+
+            <details class="faq-pill-box reveal-card">
+              <summary>
+                <span>How do I book a private or custom family tour?</span>
+                <span class="faq-chevron">⌄</span>
+              </summary>
+              <div class="faq-answer-content">
+                <strong>Simple and friction-free.</strong> Click "Plan Your Journey" to specify your dates, group size, and destination preference. A dedicated destination coordinator in Karachi or Islamabad will provide an itemized proposal via WhatsApp within 24 hours.
+              </div>
+            </details>
+
+            <details class="faq-pill-box reveal-card">
+              <summary>
+                <span>What is your weather cancellation & refund policy?</span>
+                <span class="faq-chevron">⌄</span>
+              </summary>
+              <div class="faq-answer-content">
+                If landslides or severe weather close high mountain passes, our ground team immediately re-routes your group to safe, luxury alternative valleys (such as Serena Shigar or Serena Hunza) or provides a <strong>100% travel credit valid for 12 months</strong>.
+              </div>
+            </details>
+
+            <details class="faq-pill-box reveal-card">
+              <summary>
+                <span>Do foreign tourists or overseas Pakistanis require special permits?</span>
+                <span class="faq-chevron">⌄</span>
+              </summary>
+              <div class="faq-answer-content">
+                Most top destinations—including Hunza, Skardu, Swat, Thatta, and Mohenjo-daro—<strong>do not require special NOC permits</strong> for international travelers. For restricted border regions or high-altitude climbing zones, SAFAR processes all government security clearances on your behalf.
+              </div>
+            </details>
+          </div>
+
+          <div class="faq-bottom-callout">
+            <div class="faq-callout-sub">Got more questions?</div>
+            <p class="faq-callout-text">Message our destination specialists directly to plan your custom homeland journey.</p>
+            <div class="faq-btn-group">
+              <a href="https://wa.me/923001234567" target="_blank" class="faq-chat-btn">
+                <span>💬</span> WhatsApp Concierge
+              </a>
+              <a href="#plan" class="faq-link-pill">
+                <span>✦</span> Custom Itinerary Request
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- PAGE 7: PLAN YOUR JOURNEY (TIXVENT HERO-STYLE STAGE) -->
+    <div id="page-plan" class="page-view">
+      <section class="tix-plan-stage">
+        
+        <div class="tix-plan-grid">
+          
+          <!-- Left Column: Bold Value Proposition -->
+          <div class="tix-narrative-box reveal-card">
+            <div class="tix-pill-badge">Bespoke Concierge</div>
+            <h1 class="tix-hero-title">SAFAR Where Every <span>Journey Begins</span></h1>
+            <p class="tix-hero-sub">
+              Embark on your homeland expedition with confidence and ease. SAFAR unlocks unprecedented access to high Karakoram peaks, ancient Indus heritage, and private 4x4 convoys.
+            </p>
+
+            <ul class="tix-perks-list">
+              <li>
+                <span class="tix-check-circle">✓</span>
+                <span>Dedicated personal expedition coordinator in Karachi & Islamabad</span>
+              </li>
+              <li>
+                <span class="tix-check-circle">✓</span>
+                <span>All-terrain 4x4 Prado & Land Cruiser convoys with licensed mountain escorts</span>
+              </li>
+              <li>
+                <span class="tix-check-circle">✓</span>
+                <span>Exclusive boutique fort palace bookings & private resthouse permits</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right Column: Clean Modern White Booking Card -->
+          <div class="tix-white-card reveal-card">
+            <form onsubmit="handleInquirySubmit(event)">
+              
+              <div class="tix-form-field">
+                <label class="tix-field-label">Full Name</label>
+                <div class="tix-input-box">
+                  <input type="text" id="formName" placeholder="Enter your full name" required />
+                </div>
+              </div>
+
+              <div class="tix-form-field">
+                <label class="tix-field-label">WhatsApp / Contact Phone</label>
+                <div class="tix-input-box">
+                  <input type="tel" id="formPhone" placeholder="+92 300 1234567" required />
+                </div>
+              </div>
+
+              <div class="tix-form-field">
+                <label class="tix-field-label">Destination / Tour Circuit</label>
+                <div class="tix-input-box">
+                  <select id="formDestination">
+                    <option value="Hunza & Passu Cones">Hunza & Passu Cones (High Peaks)</option>
+                    <option value="Gorakh Hill Stargazing (2 Days)">Gorakh Hill Station & Kirthar (Sindh)</option>
+                    <option value="Mohenjo-daro & Sukkur (4 Days)">Indus Archaeology: Mohenjo-daro & Sukkur</option>
+                    <option value="Skardu & Deosai Plains">Skardu & Deosai National Park</option>
+                    <option value="Fairy Meadows Trek (6 Days)">Fairy Meadows & Nanga Parbat Base</option>
+                    <option value="Serena Shigar & Khaplu Retreat (5 Days)">Serena Forts Palace Retreat</option>
+                    <option value="Sufi Trail: Thatta & Sehwan (3 Days)">Sindh Sufi Trail: Thatta & Sehwan</option>
+                    <option value="Custom Bespoke Itinerary">Multi-Region Bespoke Route</option>
+                  </select>
+                  <span class="tix-select-chevron">⌄</span>
+                </div>
+              </div>
+
+              <div class="tix-form-field">
+                <label class="tix-field-label">Group Preference</label>
+                <div class="tix-input-box">
+                  <select id="formGroupSize">
+                    <option>Solo Traveler / Couple (1-2)</option>
+                    <option>Small Family / Friends (3-6)</option>
+                    <option>Large Group (7+)</option>
+                    <option>Corporate Retreat & Film Crew</option>
+                  </select>
+                  <span class="tix-select-chevron">⌄</span>
+                </div>
+              </div>
+
+              <div class="tix-form-field">
+                <label class="tix-field-label">Target Travel Date & Notes</label>
+                <div class="tix-input-box">
+                  <input type="text" id="formNotes" placeholder="e.g. Mid-October, departing from Karachi..." />
+                </div>
+              </div>
+
+              <button type="submit" class="tix-submit-btn">Find & Book Expedition →</button>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- Bottom Sponsors / Trust Badges Bar -->
+        <div class="tix-sponsors-strip">
+          <div class="tix-sponsor-kicker">Supported by Leading Tourism Institutions:</div>
+          <div class="tix-badges-deck">
+            <div class="tix-badge-unit"><span class="tix-badge-symbol">✦</span> PTDC Verified</div>
+            <div class="tix-badge-unit"><span class="tix-badge-symbol">✦</span> Serena Forts</div>
+            <div class="tix-badge-unit"><span class="tix-badge-symbol">✦</span> Alpine Club Pak</div>
+            <div class="tix-badge-unit"><span class="tix-badge-symbol">✦</span> Sindh Heritage</div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="ft-grid">
+      <div>
+        <a href="#home" class="ft-logo">SAF<span>AR</span></a>
+        <p class="ft-desc">Curating premier mountain expeditions, cultural Sufi trails, and heritage stays across Pakistan with unmatched on-ground reliability.</p>
+      </div>
+      <div>
+        <h4>Regions</h4>
+        <ul>
+          <li><a href="#destinations" onclick="filterDestinations('sindh')">Sindh Heritage & Gorakh</a></li>
+          <li><a href="#destinations" onclick="filterDestinations('north')">Gilgit-Baltistan Peaks</a></li>
+          <li><a href="#destinations" onclick="filterDestinations('kp')">Khyber Pakhtunkhwa</a></li>
+          <li><a href="#destinations" onclick="filterDestinations('coast')">Balochistan Coast</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Safar</a></li>
+          <li><a href="#expeditions">Curated Expeditions</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#reviews">Guest Stories</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#plan">Plan Custom Trip</a></li>
+          <li><a href="#faq">Travel Advisory FAQ</a></li>
+          <li><a href="#faq">Cancellation Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">© 2026 Sandesh Kumar — All rights reserved.[cite: 1, 2, 3, 4]</div>
+  </footer>
+
+  <!-- DYNAMIC CLIENT ROUTER & SCRIPTS -->
+  <script>
+    const routesConfig = {
+      'home': {
+        title: 'SAFAR — Discover Pakistan | Valleys, Peaks & Heritage',
+        desc: 'Explore Pakistan with Safar. Curated mountain expeditions across Hunza, Skardu, and cultural Sindh Sufi circuits.'
+      },
+      'destinations': {
+        title: 'Iconic Destinations in Pakistan — Safar',
+        desc: 'Browse our curated regions: Sindh Heritage, Gorakh Hill, Hunza, Skardu, and Hingol National Park.'
+      },
+      'expeditions': {
+        title: 'Guided Pakistan Tour Packages & Expeditions — Safar',
+        desc: 'All-inclusive guided expeditions to Fairy Meadows, Gorakh Hill, Thatta, Serena Shigar Fort, and Mohenjo-daro.'
+      },
+      'how-it-works': {
+        title: 'How It Works — Effortless Travel with Safar',
+        desc: 'Learn about our 3-step itinerary planning, licensed 4x4 convoy handling, and 24/7 support in Karachi & Islamabad.'
+      },
+      'reviews': {
+        title: 'Traveler Reviews & Testimonials — Safar',
+        desc: 'Read real stories and verified experiences from local and international travelers across Pakistan.'
+      },
+      'faq': {
+        title: 'Frequently Asked Questions & Advisory — Safar',
+        desc: 'Clear answers on Gorakh Hill weather, Skardu flights, vehicle fleets, and overseas travel permits.'
+      },
+      'plan': {
+        title: 'Plan Your Journey — Custom Expeditions with Safar',
+        desc: 'Request a custom luxury or adventure itinerary. Direct assistance from coordinators in Karachi and Islamabad.'
+      }
+    };
+
+    function handleRoute() {
+      const routeLoader = document.getElementById('route-loader');
+      routeLoader.classList.add('show');
+
+      setTimeout(() => {
+        const hash = window.location.hash.replace('#', '') || 'home';
+        const targetPageId = `page-${hash}`;
+        const pages = document.querySelectorAll('.page-view');
+        const navLinks = document.querySelectorAll('nav ul a');
+
+        let pageFound = false;
+        pages.forEach(page => {
+          if (page.id === targetPageId) {
+            page.classList.add('active-page');
+            pageFound = true;
+          } else {
+            page.classList.remove('active-page');
+          }
+        });
+
+        if (!pageFound) {
+          document.getElementById('page-home').classList.add('active-page');
+        }
+
+        navLinks.forEach(link => {
+          if (link.getAttribute('data-route') === hash) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+
+        const meta = routesConfig[hash] || routesConfig['home'];
+        document.title = meta.title;
+        document.getElementById('meta-title').innerText = meta.title;
+        document.getElementById('meta-desc').setAttribute('content', meta.desc);
+        document.getElementById('og-title').setAttribute('content', meta.title);
+        document.getElementById('og-desc').setAttribute('content', meta.desc);
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        triggerScrollAnimations();
+
+        setTimeout(() => { routeLoader.classList.remove('show'); }, 150);
+      }, 200);
+    }
+
+    function triggerScrollAnimations() {
+      const cards = document.querySelectorAll('.page-view.active-page .reveal-card');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      cards.forEach(card => observer.observe(card));
+    }
+
+    function filterDestinations(region, btnElement) {
+      if (btnElement) {
+        document.querySelectorAll('#page-destinations .filter-btn').forEach(btn => btn.classList.remove('active'));
+        btnElement.classList.add('active');
+      }
+      const cards = document.querySelectorAll('#destGrid .dest-gallery-card');
+      cards.forEach(card => {
+        if (region === 'all' || card.getAttribute('data-region') === region) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      triggerScrollAnimations();
+    }
+
+    function filterTours(category, btnElement) {
+      if (btnElement) {
+        document.querySelectorAll('#page-expeditions .filter-btn').forEach(btn => btn.classList.remove('active'));
+        btnElement.classList.add('active');
+      }
+      const cards = document.querySelectorAll('#toursGrid .tc');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      triggerScrollAnimations();
+    }
+
+    function prefillDestination(tourTitle) {
+      const selectElem = document.getElementById('formDestination');
+      for (let i = 0; i < selectElem.options.length; i++) {
+        if (selectElem.options[i].value === tourTitle) {
+          selectElem.selectedIndex = i;
+          break;
+        }
+      }
+    }
+
+    function runSearch() {
+      const region = document.getElementById('homeRegionSelect').value;
+      location.hash = '#expeditions';
+      setTimeout(() => {
+        if (region === 'sindh') {
+          filterTours('sindh');
+        } else if (region === 'north') {
+          filterTours('north');
+        } else {
+          filterTours('all');
+        }
+      }, 300);
+    }
+
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('formName').value;
+      const destination = document.getElementById('formDestination').value;
+      alert(`Thank you, ${name}! Your inquiry for "${destination}" has been received. Our coordinator will contact you via WhatsApp within 24 hours.`);
+    }
+
+    /* 5-STEP ROTATING DIAL WHEEL CONTROLLER */
+    const dialStepData = [
+      {
+        num: "01",
+        title: "Route Conceptualization",
+        desc: "Select your signature itinerary across Gilgit-Baltistan, Sindh, or Balochistan—or communicate tailored requests directly with our destination planners in Islamabad & Karachi."
+      },
+      {
+        num: "02",
+        title: "All-Terrain Fleet Allocation",
+        desc: "We assign dedicated 4x4 Toyota Land Cruisers, high-clearance Prados, or VIP mountain convoys piloted by certified high-altitude drivers."
+      },
+      {
+        num: "03",
+        title: "Heritage Fortress Stays",
+        desc: "Lock in reserved royal suites in 400-year-old fortresses (Serena Shigar & Khaplu Palace) or pre-heated cliffside glamping pods at Gorakh Hill."
+      },
+      {
+        num: "04",
+        title: "Permits & Safety Security",
+        desc: "We coordinate sensitive regional clearances, domestic flight standby backups via the Karakoram Highway, and satellite SOS protocols."
+      },
+      {
+        num: "05",
+        title: "Native Escort & 24/7 Concierge",
+        desc: "Embark on your journey accompanied by indigenous mountain guides and historians, supported round-the-clock by our operations team."
+      }
+    ];
+
+    let currentDialStep = 0;
+    const totalDialSteps = 5;
+    const anglePerStep = 72;
+    const radius = 220;
+
+    function initializeDialPositions() {
+      const nodes = document.querySelectorAll('#dialRotatorDisc .dial-node');
+      nodes.forEach((node, i) => {
+        const angleDeg = i * anglePerStep - 90;
+        const angleRad = (angleDeg * Math.PI) / 180;
+        const x = Math.round(radius * Math.cos(angleRad));
+        const y = Math.round(radius * Math.sin(angleRad));
+
+        node.style.transform = `translate(${x}px, ${y}px)`;
+      });
+      applyDialStep(0);
+    }
+
+    function setDialStep(index) {
+      currentDialStep = (index + totalDialSteps) % totalDialSteps;
+      applyDialStep(currentDialStep);
+    }
+
+    function rotateDialStep(direction) {
+      setDialStep(currentDialStep + direction);
+    }
+
+    function applyDialStep(stepIndex) {
+      const rotator = document.getElementById('dialRotatorDisc');
+      const nodes = document.querySelectorAll('#dialRotatorDisc .dial-node');
+      const card = document.getElementById('dialStepCard');
+
+      const rotationDeg = -stepIndex * anglePerStep;
+      rotator.style.transform = `rotate(${rotationDeg}deg)`;
+
+      nodes.forEach((node, i) => {
+        const capsule = node.querySelector('.dial-node-capsule');
+        capsule.style.transform = `translate(-50%, -50%) rotate(${-rotationDeg}deg)`;
+        if (i === stepIndex) {
+          node.classList.add('active');
+        } else {
+          node.classList.remove('active');
+        }
+      });
+
+      card.style.opacity = '0.35';
+      card.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = dialStepData[stepIndex];
+        document.getElementById('stepBadgeNum').innerText = data.num;
+        document.getElementById('stepCardTitle').innerText = data.title;
+        document.getElementById('stepCardDesc').innerText = data.desc;
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, 160);
+    }
+
+    /* 3D STACKED PASSPORT DECK ENGINE */
+    let currentCenterIndex = 2;
+    const totalCards = 6;
+
+    function updateDeckPositions() {
+      const cards = document.querySelectorAll('#cardDeckTrack .passport-card');
+      cards.forEach((card) => {
+        const idx = parseInt(card.getAttribute('data-index'), 10);
+        let diff = idx - currentCenterIndex;
+        if (diff > totalCards / 2) diff -= totalCards;
+        if (diff < -totalCards / 2) diff += totalCards;
+
+        card.className = 'passport-card';
+
+        if (diff === 0) {
+          card.classList.add('pos-center');
+        } else if (diff === -1) {
+          card.classList.add('pos-left-1');
+        } else if (diff === 1) {
+          card.classList.add('pos-right-1');
+        } else if (diff === -2) {
+          card.classList.add('pos-left-2');
+        } else if (diff === 2) {
+          card.classList.add('pos-right-2');
+        } else {
+          card.classList.add('pos-hidden');
+        }
+      });
+    }
+
+    function rotateDeck(step) {
+      currentCenterIndex = (currentCenterIndex + step + totalCards) % totalCards;
+      updateDeckPositions();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('#cardDeckTrack .passport-card');
+      cards.forEach((card) => {
+        card.addEventListener('click', () => {
+          const idx = parseInt(card.getAttribute('data-index'), 10);
+          if (idx !== currentCenterIndex) {
+            currentCenterIndex = idx;
+            updateDeckPositions();
+          }
+        });
+      });
+      updateDeckPositions();
+      initializeDialPositions();
+    });
+
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('main-nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('nav-scrolled');
+      } else {
+        nav.classList.remove('nav-scrolled');
+      }
+    });
+
+    window.addEventListener('hashchange', handleRoute);
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      setTimeout(() => {
+        preloader.classList.add('loaded');
+        handleRoute();
+        updateDeckPositions();
+      }, 600);
+    });
+  </script>
+</body>
+</html>
