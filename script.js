@@ -1,6 +1,4 @@
-/* =======================================================
-   CLIENT-SIDE ROUTING & META MANAGEMENT
-======================================================= */
+
 const routesConfig = {
   'home': {
     title: 'SAFAR — Discover Pakistan | Valleys, Peaks & Heritage',
@@ -80,10 +78,6 @@ function handleRoute() {
     }, 150);
   }, 200);
 }
-
-/* =======================================================
-   INTERSECTION OBSERVER SCROLL ANIMATIONS
-======================================================= */
 function triggerScrollAnimations() {
   const cards = document.querySelectorAll('.page-view.active-page .reveal-card');
   const observer = new IntersectionObserver((entries) => {
@@ -97,9 +91,6 @@ function triggerScrollAnimations() {
   cards.forEach(card => observer.observe(card));
 }
 
-/* =======================================================
-   FILTER LOGIC
-======================================================= */
 function filterDestinations(region, btnElement) {
   if (btnElement) {
     document.querySelectorAll('#page-destinations .filter-btn').forEach(btn => btn.classList.remove('active'));
@@ -131,10 +122,6 @@ function filterTours(category, btnElement) {
   });
   triggerScrollAnimations();
 }
-
-/* =======================================================
-   INTERACTIVE BOOKING TAB ROUTING & PREFILL
-======================================================= */
 function prefillDestination(tourTitle) {
   const selectElem = document.getElementById('formDestination');
   if (selectElem) {
@@ -146,10 +133,7 @@ function prefillDestination(tourTitle) {
     }
   }
 
-  // Navigate to Plan tab smoothly
   window.location.hash = '#plan';
-
-  // Highlight effect on booking card
   setTimeout(() => {
     const bookingCard = document.getElementById('bookingCard');
     if (bookingCard) {
@@ -195,9 +179,6 @@ function handleInquirySubmit(e) {
   alert(`Thank you, ${name}! Your inquiry for "${destination}" has been received. Our coordinator will contact you via WhatsApp within 24 hours.`);
 }
 
-/* =======================================================
-   5-STEP ROTATING DIAL WHEEL CONTROLLER
-======================================================= */
 const dialStepData = [
   {
     num: "01",
@@ -287,9 +268,7 @@ function applyDialStep(stepIndex) {
   }, 160);
 }
 
-/* =======================================================
-   3D STACKED PASSPORT DECK ENGINE
-======================================================= */
+
 let currentCenterIndex = 2;
 const totalCards = 6;
 
@@ -324,9 +303,7 @@ function rotateDeck(step) {
   updateDeckPositions();
 }
 
-/* =======================================================
-   GLOBAL EVENT INITIALIZERS
-======================================================= */
+
 document.addEventListener('DOMContentLoaded', () => {
   const cards = document.querySelectorAll('#cardDeckTrack .passport-card');
   cards.forEach((card) => {
@@ -357,9 +334,10 @@ window.addEventListener('scroll', () => {
 window.addEventListener('hashchange', handleRoute);
 window.addEventListener('load', () => {
   const preloader = document.getElementById('preloader');
+
   setTimeout(() => {
     if (preloader) preloader.classList.add('loaded');
     handleRoute();
     updateDeckPositions();
-  }, 600);
+  }, 1000);
 });
