@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title id="meta-title">SAFAR — Discover Pakistan | Valleys, Sufi Trails & High Peaks</title>
+  <meta name="description" id="meta-desc" content="Discover Pakistan with Safar. Curated mountain expeditions, Sindh heritage circuits, Gorakh Hill stargazing, Mohenjo-daro archaeological trails, and private Karakoram 4x4 convoys." />
+  <meta name="keywords" content="Pakistan travel agency, Hunza tour, Skardu trip, Sindh tourism, Gorakh Hill package, Mohenjo Daro tour, Makli Thatta, Fairy Meadows trek, Lahore cultural tour" />
+  <meta property="og:title" id="og-title" content="SAFAR — Discover Pakistan" />
+  <meta property="og:description" id="og-desc" content="Authentic luxury guided tours, Karakoram mountain expeditions, and historic Indus Valley trails across Pakistan." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://safar-travels.pk/" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="preloader-brand">SAF<span>AR</span></div>
+    <div class="loader-ring"></div>
+    <div class="loader-sub">Discover Pakistan — Valleys, Sufi Trails & Peaks</div>
+  </div>
+
+  <!-- ROUTE LOADER -->
+  <div id="route-loader">
+    <div class="route-spin"></div>
+  </div>
+
+  <!-- GLOBAL NAV -->
+  <nav id="main-nav">
+    <a href="#home" class="nav-brand">
+      <span class="nav-tag-dot"></span> SAFAR
+    </a>
+    <ul>
+      <li><a href="#home" data-route="home">Home</a></li>
+      <li><a href="#destinations" data-route="destinations">Destinations</a></li>
+      <li><a href="#expeditions" data-route="expeditions">Expeditions</a></li>
+      <li><a href="#how-it-works" data-route="how-it-works">How It Works</a></li>
+      <li><a href="#reviews" data-route="reviews">Reviews</a></li>
+      <li><a href="#faq" data-route="faq">FAQ</a></li>
+      <li><a href="#plan" class="nav-cta" data-route="plan">Plan Your Journey</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- PAGE 1: HOME -->
+    <div id="page-home" class="page-view active-page">
+      <section class="hero-cinematic">
+        <div class="hero-cat-bar">
+          <a href="#destinations" class="active">Karakoram Peaks</a>
+          <a href="#destinations">Glacial Lakes</a>
+          <a href="#destinations">Sindh Sufi Trail</a>
+          <a href="#destinations">Makran Coastal Highway</a>
+        </div>
+
+        <div class="hero-num-rail">
+          <div>03</div>
+          <div>04</div>
+          <div class="current">05</div>
+          <div>06</div>
+          <div>07</div>
+        </div>
+
+        <h1 class="hero-main-title">VISIT<br>PAKISTAN</h1>
+
+        <div class="hero-info-grid">
+          <div class="hero-info-card">
+            <h4>Hunza & Karakoram</h4>
+            <p>Passu Cones and the turquoise waters of Attabad nestled along the 8th wonder of the world.</p>
+          </div>
+          <div class="hero-info-card">
+            <h4>Deosai & Baltistan</h4>
+            <p>The second highest plateau on earth, bordered by snow-clad ridges and Tibetan-influenced fortresses.</p>
+          </div>
+          <div class="hero-info-card">
+            <h4>Sindh & Indus Valley</h4>
+            <p>Ancient Mohenjo-daro ruins, Sufi shrines in Sehwan & Bhit Shah, and misty sunsets on Gorakh Hill Station.</p>
+          </div>
+        </div>
+
+        <a href="#destinations" class="hero-swipe-cue">Explore Valleys & Trails &gt;&gt;</a>
+      </section>
+
+      <!-- SEARCH FILTER BAR -->
+      <div class="search-strip">
+        <div class="search-card-dark">
+          <div class="sf-dark">
+            <label>Destination</label>
+            <input type="text" id="homeSearchQuery" placeholder="e.g. Gorakh, Mohenjo-daro, Hunza…" />
+          </div>
+          <div class="sf-dark">
+            <label>Departure</label>
+            <input type="date" />
+          </div>
+          <div class="sf-dark">
+            <label>Return</label>
+            <input type="date" />
+          </div>
+          <div class="sf-dark">
+            <label>Region Style</label>
+            <select id="homeRegionSelect">
+              <option value="all">All Regions</option>
+              <option value="north">Gilgit-Baltistan (Peaks)</option>
+              <option value="sindh">Sindh (Sufi & Heritage)</option>
+              <option value="kp">Khyber Pakhtunkhwa (Valleys)</option>
+              <option value="balochistan">Balochistan (Coast)</option>
+            </select>
+          </div>
+          <div>
+            <button class="nav-cta" style="border:none; cursor:pointer; height:46px; width:100%; font-size:0.9rem;" onclick="runSearch()">Find Tours →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RECOMMENDATIONS FLIP CARDS -->
+      <section class="dest-rec-section">
+        <div class="section-lead-center">
+          <div class="sec-sub-kicker">Curated Recommendations</div>
+          <h2 class="sec-head-bold">Destination Recommendations</h2>
+        </div>
+
+        <div class="rec-grid-4">
+          <!-- Card 1 -->
+          <div class="flip-card-wrapper reveal-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img class="rec-bg-img" src="https://i.pinimg.com/736x/36/1e/61/361e61064549657d4322cb3cddfece68.jpg" alt="Hunza Passu Cones" />
+                <div class="rec-card-overlay"></div>
+                <div class="rec-top-row">
+                  <span class="rec-pill-rank">1st Place</span>
+                  <div class="rec-num-chip">01</div>
+                </div>
+                <div class="rec-bottom-content">
+                  <div class="rec-region-sub">Gilgit-Baltistan</div>
+                  <h3 class="rec-main-title">Hunza & Passu Cones</h3>
+                  <div class="rec-hover-btn"><span>Hover to Explore</span> <span>↻</span></div>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <span class="badge-flip">Northern Hub</span>
+                <h4>Hunza Valley</h4>
+                <p>Famous for jagged serrated Passu Cathedral spires, Baltit & Altit royal forts, and vibrant apricot blossoms.</p>
+                <div class="flip-stats">
+                  <div><span>Altitude</span><strong>2,438m</strong></div>
+                  <div><span>Best Time</span><strong>Apr — Oct</strong></div>
+                </div>
+                <a href="#destinations" class="flip-action-btn">View Destination Guide →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="flip-card-wrapper reveal-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img class="rec-bg-img" src="https://i.pinimg.com/736x/3d/ef/6c/3def6c88d8274434ebeb84cf59049367.jpg" alt="Gorakh Hill Station" />
+                <div class="rec-card-overlay"></div>
+                <div class="rec-top-row">
+                  <span class="rec-pill-rank">2nd Place</span>
+                  <div class="rec-num-chip">02</div>
+                </div>
+                <div class="rec-bottom-content">
+                  <div class="rec-region-sub">Sindh Highlands</div>
+                  <h3 class="rec-main-title">Gorakh Hill Station</h3>
+                  <div class="rec-hover-btn"><span>Hover to Explore</span> <span>↻</span></div>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <span class="badge-flip">Sindh Ridge</span>
+                <h4>Gorakh Hill</h4>
+                <p>Perched upon the Kirthar Mountains at 5,688 ft, offering frosty winters, zero light-pollution stargazing, and 4x4 safaris.</p>
+                <div class="flip-stats">
+                  <div><span>Altitude</span><strong>1,734m</strong></div>
+                  <div><span>Climate</span><strong>Sub-Zero Chill</strong></div>
+                </div>
+                <a href="#destinations" class="flip-action-btn">View Destination Guide →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="flip-card-wrapper reveal-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img class="rec-bg-img" src="https://i.pinimg.com/736x/63/39/5b/63395b246160f0cff7828b580ab20315.jpg" alt="Skardu & Deosai Plains" />
+                <div class="rec-card-overlay"></div>
+                <div class="rec-top-row">
+                  <span class="rec-pill-rank">3rd Place</span>
+                  <div class="rec-num-chip">03</div>
+                </div>
+                <div class="rec-bottom-content">
+                  <div class="rec-region-sub">Baltistan Plateau</div>
+                  <h3 class="rec-main-title">Skardu & Deosai Plains</h3>
+                  <div class="rec-hover-btn"><span>Hover to Explore</span> <span>↻</span></div>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <span class="badge-flip">Alpine Plains</span>
+                <h4>Deosai & Skardu</h4>
+                <p>Known as the 'Land of Giants', hosting the Himalayan brown bear sanctuary, Sheosar Lake, and centuries-old fortresses.</p>
+                <div class="flip-stats">
+                  <div><span>Altitude</span><strong>4,114m</strong></div>
+                  <div><span>Terrain</span><strong>Alpine Meadow</strong></div>
+                </div>
+                <a href="#destinations" class="flip-action-btn">View Destination Guide →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="flip-card-wrapper reveal-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img class="rec-bg-img" src="https://i.pinimg.com/736x/e7/d9/66/e7d966077c7e8b699a2579f31296b4f9.jpg" alt="Mohenjo-daro Stupa" />
+                <div class="rec-card-overlay"></div>
+                <div class="rec-top-row">
+                  <span class="rec-pill-rank">4th Place</span>
+                  <div class="rec-num-chip">04</div>
+                </div>
+                <div class="rec-bottom-content">
+                  <div class="rec-region-sub">Indus Valley · Sindh</div>
+                  <h3 class="rec-main-title">Mohenjo-daro Citadel</h3>
+                  <div class="rec-hover-btn"><span>Hover to Explore</span> <span>↻</span></div>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <span class="badge-flip">2500 BCE UNESCO</span>
+                <h4>Indus Civilization</h4>
+                <p>One of the earliest civil engineering wonders in human history, featuring advanced drainage, the Great Bath, and baked brick architecture.</p>
+                <div class="flip-stats">
+                  <div><span>Era</span><strong>Bronze Age</strong></div>
+                  <div><span>Location</span><strong>Larkana, Sindh</strong></div>
+                </div>
+                <a href="#destinations" class="flip-action-btn">View Destination Guide →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SINDH HERITAGE SPOTLIGHT -->
+      <section class="sindh-spotlight">
+        <div class="section-lead-center" style="margin-bottom:1.5rem;">
+          <div class="sec-sub-kicker" style="color:var(--gold); font-size: 0.95rem;">ancient cradles & misty highlands</div>
+          <h2 class="sec-head-bold" style="text-transform:uppercase; font-size: clamp(2.4rem, 4.5vw, 3.6rem);">The Untold Splendor of Sindh</h2>
+        </div>
+        <p style="text-align:center;max-width:760px;margin:0 auto;color:rgba(255,255,255,0.75);font-size:1.1rem;line-height:1.9; font-weight: 300;">
+          Beyond the northern glaciers lies the 5,000-year-old soul of Pakistan. From the chill winds of Gorakh Hill to the blue-tiled Mughal domes of Thatta and mystic Sufi qawwalis in Sehwan Sharif.
+        </p>
+
+        <div class="sindh-grid">
+          <div class="sindh-box reveal-card">
+            <div class="sindh-media">
+              <img src="https://i.pinimg.com/1200x/ab/c6/53/abc6534f69da1934ea9b70116b54f254.jpg" alt="Khirthar Range Sindh"/>
+            </div>
+            <div class="sindh-body">
+              <span class="sindh-tag">Sindh Highlands · 5,688 Ft</span>
+              <h3>Gorakh Hill Station & Kirthar Escarpment</h3>
+              <p>Known as the 'Murree of Sindh', experience sub-zero winter temperatures, thrilling 4x4 climbs from Wahi Pandhi, and crystalline starry night skies.</p>
+            </div>
+          </div>
+
+          <div class="sindh-box reveal-card">
+            <div class="sindh-media">
+              <img src="https://i.pinimg.com/736x/72/4a/b7/724ab7b38cdd6225f6d1f9755ce4267e.jpg" alt="Mohenjo-daro Buddhist Stupa and Bronze Age Ruins"/>
+            </div>
+            <div class="sindh-body">
+              <span class="sindh-tag">UNESCO World Heritage · 2500 BCE</span>
+              <h3>Mohenjo-daro & Kot Diji Fort</h3>
+              <p>Walk among the world's oldest planned urban settlements. Explore ancient drainage networks, the Great Bath, and the majestic Talpur fortresses of Khairpur.</p>
+            </div>
+          </div>
+
+          <div class="sindh-box reveal-card">
+            <div class="sindh-media">
+              <img src="https://i.pinimg.com/736x/d6/74/18/d67418643072942c072864f8c09ed20d.jpg" alt="Historical Islamic Architecture in Thatta"/>
+            </div>
+            <div class="sindh-body">
+              <span class="sindh-tag">Necropolis & Mughal Art</span>
+              <h3>Makli Necropolis & Shah Jahan Mosque</h3>
+              <p>Over 500,000 intricate sandstone tombs spanning 400 years of dynastic rule, coupled with the 93 blue-tiled domes of Thatta’s acoustic wonder.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY CHOOSE SAFAR STRIP -->
+      <section class="why-safar-strip">
+        <div class="section-lead-center" style="margin-bottom:1.5rem;">
+          <div class="sec-sub-kicker" style="font-size: 0.9rem;">safe · verified · authentic</div>
+          <h2 class="sec-head-bold" style="text-transform:uppercase; font-size: clamp(2.2rem, 4vw, 3.2rem);">The Safar Standard</h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-item reveal-card">
+            <div class="why-icon">🚙</div>
+            <h4>Dedicated 4x4 Fleet</h4>
+            <p>Toyota Land Cruisers & high-clearance Prados maintained specifically for northern passes and Kirthar mountain ascents.</p>
+          </div>
+          <div class="why-item reveal-card">
+            <div class="why-icon">🛡️</div>
+            <h4>Native Escorts & Guides</h4>
+            <p>Led by local guides from Hunza, Skardu, Thatta, and Larkana with deep cultural familiarity and high-altitude safety training.</p>
+          </div>
+          <div class="why-item reveal-card">
+            <div class="why-icon">🏨</div>
+            <h4>Handpicked Heritage Stays</h4>
+            <p>From Serena Shigar Fort palace suites to heated high-altitude glamping pods and private resthouses in Gorakh.</p>
+          </div>
+          <div class="why-item reveal-card">
+            <div class="why-icon">📡</div>
+            <h4>24/7 Ground Concierge</h4>
+            <p>Live satellite monitoring, prompt flight cancellation backup convoys, and personalized coordinators based in Karachi and Islamabad.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRAVEL AND ENJOY STORY BANNER -->
+      <section class="feature-banner">
+        <div>
+          <h2>TRAVEL AND<br>ENJOY YOUR<br>HOMELAND</h2>
+          <a href="#plan" class="feature-cue"><span class="cue-circle">▶</span> choose your expedition</a>
+          <p class="feature-desc">
+            From the 8,000-meter giants of the Karakoram to the ancient Indus River trails, Safar designs bespoke itineraries with verified 4x4 convoys, local native hosts, and luxury heritage accommodations.
+          </p>
+          <a href="#plan" class="nav-cta" style="display:inline-block; font-size: 0.95rem; padding: 0.8rem 1.8rem;">Plan With Concierge →</a>
+        </div>
+
+        <div class="feature-thumbnails">
+          <div class="feature-thumb-box">
+            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800" alt="Balochistan Hingol Princess of Hope"/>
+          </div>
+          <div class="feature-thumb-box">
+            <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=800" alt="Serena Shigar Fort Baltistan"/>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- PAGE 2: DESTINATIONS -->
+    <div id="page-destinations" class="page-view">
+      <div class="inner-header">
+        <div style="font-size:.8rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">Explore Regions</div>
+        <h1>Iconic Destinations</h1>
+      </div>
+      <div class="inner-body">
+        <div class="filter-tabs">
+          <button class="filter-btn active" onclick="filterDestinations('all', this)">All Pakistan</button>
+          <button class="filter-btn" onclick="filterDestinations('sindh', this)">Sindh Heritage & Gorakh</button>
+          <button class="filter-btn" onclick="filterDestinations('north', this)">Gilgit-Baltistan</button>
+          <button class="filter-btn" onclick="filterDestinations('kp', this)">Khyber Pakhtunkhwa</button>
+          <button class="filter-btn" onclick="filterDestinations('coast', this)">Balochistan Coast</button>
+        </div>
+
+        <div class="dest-gallery-grid" id="destGrid">
+          
+          <!-- Flip Gallery Item 1 -->
+          <div class="flip-card-wrapper reveal-card" data-region="sindh">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img class="rec-bg-img" src="https://i.pinimg.com/736x/3d/ef/6c/3def6c88d8274434ebeb84cf59049367.jpg" alt="Gorakh Hill Station Sindh"/>
+                <div class="dest-gallery-overlay"></div>
+                <div class="dest-gallery-info">
+                  <div class="dest-gallery-rank">Sindh Highlands</div>
+                  <h3 class="dest-gallery-title">Gorakh Hill Station (5,688 ft)</h3>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <span class="badge-flip">Highland View</span>
+                <h4>Gorakh Peak</h4>
+                <p>Enjoy crisp breezes, picturesque cliffs, off-road 4x4 safaris, and stargazing from Sindh's highest ridge.</p>
+                <div class="flip-stats">
+                  <div><span>Elevation</span><strong>1,734m</strong></div>
+                  <div><span>Access</span><strong>Wahi Pandhi</strong></div>
+                </div>
+                <a href="#expeditions" class="flip-action-btn" onclick="prefillDestination('Gorakh Hill Stargazing (2 Days)')">Find Gorakh Tours →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flip Gallery Item 2 -->
+          <div class="flip-card-wrapper reveal-card" data-region="sindh">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img class="rec-bg-img" src="https://i.pinimg.com/736x/c9/63/dd/c963ddcbfd8f11f20d6f1fc1936f6bb0.jpg" alt="Mohenjo-daro Archaeological Ruins Larkana"/>
+                <div class="dest-gallery-overlay"></div>
+                <div class="dest-gallery-info">
+                  <div class="dest-gallery-rank">Ancient Indus</div>
+                  <h3 class="dest-gallery-title">Mohenjo-daro Ruins & Stupa</h3>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <span class="badge-flip">Archaeology</span>
+                <h4>Mohenjo-daro</h4>
+                <p>Explore an ancient metropolis of the Indus Valley with licensed archaeologists, college excavations, and ancient monuments.</p>
+                <div class="flip-stats">
+                  <div><span>Period</span><strong>2500 BCE</strong></div>
+                  <div><span>Location</span><strong>Larkana</strong></div>
+                </div>
+                <a href="#expeditions" class="flip-action-btn" onclick="prefillDestination('Mohenjo-daro & Sukkur (4 Days)')">View Indus Tours →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flip Gallery Item 3 -->
+          <div class="flip-card-wrapper reveal-card" data-region="sindh">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img class="rec-bg-img" src="https://i.pinimg.com/736x/d6/74/18/d67418643072942c072864f8c09ed20d.jpg" alt="Thatta Makli Necropolis"/>
+                <div class="dest-gallery-overlay"></div>
+                <div class="dest-gallery-info">
+                  <div class="dest-gallery-rank">Sindh Heritage</div>
+                  <h3 class="dest-gallery-title">Makli & Shah Jahan Mosque</h3>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <span class="badge-flip">Mughal & Sufi</span>
+                <h4>Thatta Heritage</h4>
+                <p>Marvel at intricate floral calligraphy across 500,000 royal tombs and the peerless acoustic blue tiles of Shah Jahan Mosque.</p>
+                <div class="flip-stats">
+                  <div><span>Monuments</span><strong>Makli Necropolis</strong></div>
+                  <div><span>Drive</span><strong>2 Hrs from Karachi</strong></div>
+                </div>
+                <a href="#expeditions" class="flip-action-btn" onclick="prefillDestination('Sufi Trail: Thatta & Sehwan (3 Days)')">Explore Thatta Trips →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flip Gallery Item 4 -->
+          <div class="flip-card-wrapper reveal-card" data-region="sindh">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img class="rec-bg-img" src="https://i.pinimg.com/736x/41/52/04/4152045e2c83339e1d13f8160370aede.jpg" alt="Ranikot Fort Sindh"/>
+                <div class="dest-gallery-overlay"></div>
+                <div class="dest-gallery-info">
+                  <div class="dest-gallery-rank">Jamshoro · Sindh</div>
+                  <h3 class="dest-gallery-title">Ranikot Fort (Great Wall)</h3>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <span class="badge-flip">Historic Ramparts</span>
+                <h4>Ranikot Fort</h4>
+                <p>The largest fort in the world with a 32-kilometer perimeter wall tracing natural mountain contours in Jamshoro.</p>
+                <div class="flip-stats">
+                  <div><span>Circumference</span><strong>32 KM</strong></div>
+                  <div><span>Terrain</span><strong>Kirthar Slopes</strong></div>
+                </div>
+                <a href="#plan" class="flip-action-btn" onclick="prefillDestination('Custom Bespoke Itinerary')">Book 4x4 Expedition →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flip Gallery Item 5 -->
+          <div class="flip-card-wrapper reveal-card" data-region="north">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img class="rec-bg-img" src="https://i.pinimg.com/736x/6d/23/e7/6d23e7a656a39a3432ca58b853c69712.jpg" alt="Hunza Passu Cones"/>
+                <div class="dest-gallery-overlay"></div>
+                <div class="dest-gallery-info">
+                  <div class="dest-gallery-rank">Gilgit-Baltistan</div>
+                  <h3 class="dest-gallery-title">Hunza Valley & Khunjerab Pass</h3>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <span class="badge-flip">Karakoram</span>
+                <h4>Hunza & Khunjerab</h4>
+                <p>Cross suspension bridges, navigate the turquoise waters of Attabad, and ascend the highest paved international border on earth.</p>
+                <div class="flip-stats">
+                  <div><span>Pass Altitude</span><strong>4,693m</strong></div>
+                  <div><span>Season</span><strong>Summer & Autumn</strong></div>
+                </div>
+                <a href="#expeditions" class="flip-action-btn" onclick="prefillDestination('Hunza Autumn Tour (7 Days)')">See Hunza Packages →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flip Gallery Item 6 -->
+          <div class="flip-card-wrapper reveal-card" data-region="north">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img class="rec-bg-img" src="https://i.pinimg.com/736x/11/2e/72/112e72edcb8db2fe2275e99522f2afd0.jpg" alt="Skardu Deosai Plains"/>
+                <div class="dest-gallery-overlay"></div>
+                <div class="dest-gallery-info">
+                  <div class="dest-gallery-rank">Baltistan</div>
+                  <h3 class="dest-gallery-title">Skardu & Deosai National Park</h3>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <span class="badge-flip">Baltistan Jewels</span>
+                <h4>Skardu & Shigar</h4>
+                <p>Gateway to K2, surrounded by cold deserts, turquoise lake reflections, and 400-year-old royal palace fortresses.</p>
+                <div class="flip-stats">
+                  <div><span>Stays</span><strong>Serena Forts</strong></div>
+                  <div><span>Key Sight</span><strong>Sheosar Lake</strong></div>
+                </div>
+                <a href="#expeditions" class="flip-action-btn" onclick="prefillDestination('Serena Shigar & Khaplu Retreat (5 Days)')">Explore Skardu Tours →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flip Gallery Item 7 -->
+          <div class="flip-card-wrapper reveal-card" data-region="kp">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img class="rec-bg-img" src="https://i.pinimg.com/736x/85/5b/97/855b97123de8f3e14e3ba8d03c52de67.jpg" alt="Swat Kalam Valley"/>
+                <div class="dest-gallery-overlay"></div>
+                <div class="dest-gallery-info">
+                  <div class="dest-gallery-rank">Khyber Pakhtunkhwa</div>
+                  <h3 class="dest-gallery-title">Swat Valley, Kalam & Kumrat</h3>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <span class="badge-flip">Alpine Forest</span>
+                <h4>Swat & Kumrat</h4>
+                <p>Dense Deodar pine forests, foaming alpine rivers, roaring waterfalls, and serene mountain getaways.</p>
+                <div class="flip-stats">
+                  <div><span>Character</span><strong>Swiss of the East</strong></div>
+                  <div><span>Best Months</span><strong>May — Sep</strong></div>
+                </div>
+                <a href="#plan" class="flip-action-btn" onclick="prefillDestination('Custom Bespoke Itinerary')">Plan A Swat Trip →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flip Gallery Item 8 -->
+          <div class="flip-card-wrapper reveal-card" data-region="coast">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img class="rec-bg-img" src="https://i.pinimg.com/1200x/7a/65/f4/7a65f4065833671c7aa84f86fe8d693f.jpg" alt="Kund Malir Balochistan"/>
+                <div class="dest-gallery-overlay"></div>
+                <div class="dest-gallery-info">
+                  <div class="dest-gallery-rank">Balochistan</div>
+                  <h3 class="dest-gallery-title">Kund Malir & Hingol National Park</h3>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <span class="badge-flip">Coastal Wonders</span>
+                <h4>Makran Highway</h4>
+                <p>Golden desert dunes cascading into crystal turquoise sea waters, unique mud volcanoes, and natural rock sphinxes.</p>
+                <div class="flip-stats">
+                  <div><span>Drive</span><strong>3.5 Hrs from Karachi</strong></div>
+                  <div><span>Style</span><strong>Coastal 4x4 Cruise</strong></div>
+                </div>
+                <a href="#plan" class="flip-action-btn" onclick="prefillDestination('Custom Bespoke Itinerary')">Plan Coastal Tour →</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 3: EXPEDITIONS -->
+    <div id="page-expeditions" class="page-view">
+      <div class="inner-header">
+        <div style="font-size:.8rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">Handcrafted Itineraries</div>
+        <h1>Curated Expeditions & Tours</h1>
+        <p style="color:rgba(255,255,255,0.65); font-size:0.95rem; margin-top:0.6rem;">Hover to inspect trip highlights, then click any card to seamlessly book your spot.</p>
+      </div>
+      <div class="inner-body">
+        <div class="filter-tabs">
+          <button class="filter-btn active" onclick="filterTours('all', this)">All Tours</button>
+          <button class="filter-btn" onclick="filterTours('sindh', this)">Sindh Circuits</button>
+          <button class="filter-btn" onclick="filterTours('north', this)">Northern Peaks</button>
+          <button class="filter-btn" onclick="filterTours('luxury', this)">Luxury Fort Stays</button>
+        </div>
+
+        <div class="tours-grid" id="toursGrid">
+
+          <!-- Expedition Card 1 -->
+          <div class="flip-card-wrapper tc-interactive reveal-card" data-category="sindh" data-target-tour="Gorakh Hill Stargazing (2 Days)">
+            <div class="flip-card-inner">
+              <div class="flip-card-front tc">
+                <div class="tc-media">
+                  <img src="https://i.pinimg.com/1200x/d4/b4/8a/d4b48aa465bc2caefd547ca8053c7473.jpg" alt="Gorakh Hill Station"/>
+                </div>
+                <div class="tc-body">
+                  <span class="tc-tag tag-sindh">Sindh Highland</span>
+                  <h3>Gorakh Hill Stargazing & Wahi Pandhi 4x4 Safari</h3>
+                  <p class="tc-desc">Ascend to Sindh's coldest peak at 5,688 ft via rugged 4x4 jeeps. Includes cliffside bonfire camping, panoramic Kirthar views, and stargazing.</p>
+                  <div class="tc-meta"><span>📍 Dadu, Sindh</span><span>📅 2 Days</span><span>👥 Groups & Families</span></div>
+                  <div class="tc-footer">
+                    <div class="tc-price">From<strong>PKR 22,500</strong></div>
+                    <span class="tc-click-cue">Click to Book ↗</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-card-back tc-back">
+                <span class="badge-flip">Quick Snapshot</span>
+                <h4>Gorakh Safari (2 Days)</h4>
+                <ul class="flip-perks">
+                  <li>✔ Dedicated 4x4 transport from Karachi / Sehwan</li>
+                  <li>✔ Glamping pods or mountain huts with heating</li>
+                  <li>✔ Cliffside barbecue & guided night stargazing session</li>
+                  <li>✔ Local Kirthar mountain drivers & safety gear</li>
+                </ul>
+                <div class="tc-footer" style="width:100%; margin-top:auto;">
+                  <div class="tc-price" style="text-align:left;">Total Cost<strong>PKR 22,500</strong></div>
+                  <button class="flip-action-btn">Book Expedition →</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Expedition Card 2 -->
+          <div class="flip-card-wrapper tc-interactive reveal-card" data-category="sindh" data-target-tour="Sufi Trail: Thatta & Sehwan (3 Days)">
+            <div class="flip-card-inner">
+              <div class="flip-card-front tc">
+                <div class="tc-media">
+                  <img src="https://i.pinimg.com/1200x/09/b2/76/09b276fb516163ae5c7437389cbba16c.jpg" alt="Shah Jahan Mosque Thatta"/>
+                </div>
+                <div class="tc-body">
+                  <span class="tc-tag tag-sindh">Sufi & History</span>
+                  <h3>Sufi Trail: Thatta, Bhit Shah & Sehwan Sharif</h3>
+                  <p class="tc-desc">Visit Makli Necropolis, Shah Jahan Mosque, and experience authentic Sufi mystic qawwalis and dhamal at Shah Abdul Latif Bhittai and Lal Shahbaz Qalandar.</p>
+                  <div class="tc-meta"><span>📍 Thatta & Matiari</span><span>📅 3 Days</span><span>👥 Max 12</span></div>
+                  <div class="tc-footer">
+                    <div class="tc-price">From<strong>PKR 38,000</strong></div>
+                    <span class="tc-click-cue">Click to Book ↗</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-card-back tc-back">
+                <span class="badge-flip">Spiritual Circuit</span>
+                <h4>Sufi Heritage Circuit</h4>
+                <ul class="flip-perks">
+                  <li>✔ Licensed archaeologist accompaniment at Makli</li>
+                  <li>✔ Traditional Tambura performances at Bhit Shah</li>
+                  <li>✔ Air-conditioned coaster / VIP transport</li>
+                  <li>✔ Curated traditional Sindhi cultural banquets</li>
+                </ul>
+                <div class="tc-footer" style="width:100%; margin-top:auto;">
+                  <div class="tc-price" style="text-align:left;">Total Cost<strong>PKR 38,000</strong></div>
+                  <button class="flip-action-btn">Book Expedition →</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Expedition Card 3 -->
+          <div class="flip-card-wrapper tc-interactive reveal-card" data-category="sindh" data-target-tour="Mohenjo-daro & Sukkur (4 Days)">
+            <div class="flip-card-inner">
+              <div class="flip-card-front tc">
+                <div class="tc-media">
+                  <img src="https://i.pinimg.com/736x/e7/d9/66/e7d966077c7e8b699a2579f31296b4f9.jpg" alt="Mohenjo-daro Archaeological Ruins"/>
+                </div>
+                <div class="tc-body">
+                  <span class="tc-tag tag-sindh">Archaeology Trail</span>
+                  <h3>Indus Civilization: Mohenjo-daro, Kot Diji & Sukkur</h3>
+                  <p class="tc-desc">Guided tour through 5,000-year-old Bronze Age streets, Great Bath, Great Stupa, Kot Diji Fort, and riverboat cruise along Sadhu Bela temple on the Indus River.</p>
+                  <div class="tc-meta"><span>📍 Larkana & Sukkur</span><span>📅 4 Days</span><span>👥 Heritage Buffs</span></div>
+                  <div class="tc-footer">
+                    <div class="tc-price">From<strong>PKR 49,000</strong></div>
+                    <span class="tc-click-cue">Click to Book ↗</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-card-back tc-back">
+                <span class="badge-flip">5000 Years Old</span>
+                <h4>Indus Civilization Trail</h4>
+                <ul class="flip-perks">
+                  <li>✔ Special permission access to excavation galleries</li>
+                  <li>✔ Sukkur Indus riverboat cruise at sunset</li>
+                  <li>✔ Exploration of the grand Talpur citadel at Kot Diji</li>
+                  <li>✔ 4-star boutique hotel reservations in Sukkur</li>
+                </ul>
+                <div class="tc-footer" style="width:100%; margin-top:auto;">
+                  <div class="tc-price" style="text-align:left;">Total Cost<strong>PKR 49,000</strong></div>
+                  <button class="flip-action-btn">Book Expedition →</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Expedition Card 4 -->
+          <div class="flip-card-wrapper tc-interactive reveal-card" data-category="north" data-target-tour="Fairy Meadows Trek (6 Days)">
+            <div class="flip-card-inner">
+              <div class="flip-card-front tc">
+                <div class="tc-media">
+                  <img src="https://i.pinimg.com/1200x/3b/19/1d/3b191d6452715b555993a6bbd82ccd49.jpg" alt="Fairy Meadows Nanga Parbat"/>
+                </div>
+                <div class="tc-body">
+                  <span class="tc-tag tag-adv">Adventure Trek</span>
+                  <h3>Fairy Meadows & Nanga Parbat Base Camp</h3>
+                  <p class="tc-desc">A bucket-list high-altitude trek to the base of the Killer Mountain (8,126m), complete with heated mountain huts and local Shina guides.</p>
+                  <div class="tc-meta"><span>📍 Gilgit-Baltistan</span><span>📅 6 Days</span><span>👥 Max 10</span></div>
+                  <div class="tc-footer">
+                    <div class="tc-price">From<strong>PKR 98,000</strong></div>
+                    <span class="tc-click-cue">Click to Book ↗</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-card-back tc-back">
+                <span class="badge-flip">High Altitude</span>
+                <h4>Nanga Parbat Base</h4>
+                <ul class="flip-perks">
+                  <li>✔ Heated alpine log cabins in Fairy Meadows</li>
+                  <li>✔ Raikot Bridge 4x4 mountain track convoy</li>
+                  <li>✔ High-altitude wilderness porters and cook team</li>
+                  <li>✔ First aid & satellite phone connectivity</li>
+                </ul>
+                <div class="tc-footer" style="width:100%; margin-top:auto;">
+                  <div class="tc-price" style="text-align:left;">Total Cost<strong>PKR 98,000</strong></div>
+                  <button class="flip-action-btn">Book Expedition →</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Expedition Card 5 -->
+          <div class="flip-card-wrapper tc-interactive reveal-card" data-category="luxury" data-target-tour="Serena Shigar & Khaplu Retreat (5 Days)">
+            <div class="flip-card-inner">
+              <div class="flip-card-front tc">
+                <div class="tc-media">
+                  <img src="https://i.pinimg.com/1200x/85/06/df/8506df0b7f077f73599202dbc7cafd39.jpg" alt="Serena Shigar Fort"/>
+                </div>
+                <div class="tc-body">
+                  <span class="tc-tag tag-lux">Royal Heritage</span>
+                  <h3>Serena Shigar Fort & Khaplu Palace Retreat</h3>
+                  <p class="tc-desc">Stay in 400-year-old Raja suites restored by the Aga Khan Trust. Private airport chauffeuring, royal lawn courtyards, and candlelit orchard dining.</p>
+                  <div class="tc-meta"><span>📍 Skardu Valley</span><span>📅 5 Days</span><span>👥 Couples & Luxury</span></div>
+                  <div class="tc-footer">
+                    <div class="tc-price">From<strong>PKR 245,000</strong></div>
+                    <span class="tc-click-cue">Click to Book ↗</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-card-back tc-back">
+                <span class="badge-flip">VIP Heritage</span>
+                <h4>Royal Baltistan Palace</h4>
+                <ul class="flip-perks">
+                  <li>✔ Serena Shigar Fort Raja Suite accommodation</li>
+                  <li>✔ Private Prado 4x4 chauffeuring from Skardu airport</li>
+                  <li>✔ VIP domestic flight standby backup protection</li>
+                  <li>✔ Private dinner in 400-year-old Raja courtyards</li>
+                </ul>
+                <div class="tc-footer" style="width:100%; margin-top:auto;">
+                  <div class="tc-price" style="text-align:left;">Total Cost<strong>PKR 245,000</strong></div>
+                  <button class="flip-action-btn">Book Expedition →</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Expedition Card 6 -->
+          <div class="flip-card-wrapper tc-interactive reveal-card" data-category="north" data-target-tour="Hunza Autumn Tour (7 Days)">
+            <div class="flip-card-inner">
+              <div class="flip-card-front tc">
+                <div class="tc-media">
+                  <img src="https://i.pinimg.com/736x/36/1e/61/361e61064549657d4322cb3cddfece68.jpg" alt="Autumn in Hunza"/>
+                </div>
+                <div class="tc-body">
+                  <span class="tc-tag tag-cul">Golden Season</span>
+                  <h3>Autumn Colors of Hunza & Passu Cones</h3>
+                  <p class="tc-desc">Witness apricot orchards turning deep gold along snow-dusted Karakoram ridges. Cross Hussaini Suspension Bridge, explore Baltit Fort, and cruise Attabad Lake.</p>
+                  <div class="tc-meta"><span>📍 Hunza Valley</span><span>📅 7 Days</span><span>👥 Small Groups</span></div>
+                  <div class="tc-footer">
+                    <div class="tc-price">From<strong>PKR 115,000</strong></div>
+                    <span class="tc-click-cue">Click to Book ↗</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-card-back tc-back">
+                <span class="badge-flip">Golden Canopy</span>
+                <h4>Hunza Valley Autumn</h4>
+                <ul class="flip-perks">
+                  <li>✔ Attabad lake private boat cruise and jet skis</li>
+                  <li>✔ Baltit & Altit forts VIP guided entrance</li>
+                  <li>✔ Sunset views over Passu Cathedral Cones</li>
+                  <li>✔ Luxury boutique hotel stays with central heating</li>
+                </ul>
+                <div class="tc-footer" style="width:100%; margin-top:auto;">
+                  <div class="tc-price" style="text-align:left;">Total Cost<strong>PKR 115,000</strong></div>
+                  <button class="flip-action-btn">Book Expedition →</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 4: HOW IT WORKS -->
+    <div id="page-how-it-works" class="page-view">
+      <section class="dial-process-section">
+        <div class="dial-process-stage">
+          <div class="dial-details-panel">
+            <div class="dial-sub-badge">SAFAR Operational Blueprint</div>
+            <h2 class="dial-main-h2">Curated Travel<br><span>Architecture.</span></h2>
+
+            <div class="dial-step-card" id="dialStepCard">
+              <div class="dial-step-indicator">
+                <span class="dial-num-badge" id="stepBadgeNum">01</span>
+                <span style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 2px; color: #a9a394;">Active Method</span>
+              </div>
+              <h3 class="dial-step-title" id="stepCardTitle">Route Conceptualization</h3>
+              <p class="dial-step-text" id="stepCardDesc">
+                Select your signature itinerary across Gilgit-Baltistan, Sindh, or Balochistan—or communicate tailored requests directly with our destination planners in Islamabad & Karachi.
+              </p>
+              <div class="dial-controls">
+                <button class="dial-btn" onclick="rotateDialStep(-1)" title="Previous Step">‹</button>
+                <button class="dial-btn" onclick="rotateDialStep(1)" title="Next Step">›</button>
+                <span style="font-size: 0.85rem; color: rgba(255,255,255,0.45); margin-left: 0.8rem;">Click or rotate node to preview</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dial-wheel-arena">
+            <div class="dial-outer-track"></div>
+            <div class="dial-capsule-track"></div>
+
+            <div class="dial-rotator-disc" id="dialRotatorDisc">
+              <div class="dial-node active" data-step="0" onclick="setDialStep(0)">
+                <div class="dial-node-capsule">
+                  <div class="dial-pill-button">01</div>
+                  <span class="dial-node-label">Easy Choice</span>
+                </div>
+              </div>
+              <div class="dial-node" data-step="1" onclick="setDialStep(1)">
+                <div class="dial-node-capsule">
+                  <div class="dial-pill-button">02</div>
+                  <span class="dial-node-label">Fleet Setup</span>
+                </div>
+              </div>
+              <div class="dial-node" data-step="2" onclick="setDialStep(2)">
+                <div class="dial-node-capsule">
+                  <div class="dial-pill-button">03</div>
+                  <span class="dial-node-label">Heritage Forts</span>
+                </div>
+              </div>
+              <div class="dial-node" data-step="3" onclick="setDialStep(3)">
+                <div class="dial-node-capsule">
+                  <div class="dial-pill-button">04</div>
+                  <span class="dial-node-label">Permit Security</span>
+                </div>
+              </div>
+              <div class="dial-node" data-step="4" onclick="setDialStep(4)">
+                <div class="dial-node-capsule">
+                  <div class="dial-pill-button">05</div>
+                  <span class="dial-node-label">Concierge Escort</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dial-hub-core">
+              <div class="hub-brand-name">SAFAR</div>
+              <div class="hub-brand-sub">Methodology</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- PAGE 5: REVIEWS -->
+    <div id="page-reviews" class="page-view">
+      <div class="inner-header">
+        <div style="font-size:.8rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">Verified Expeditions</div>
+        <h1>Stories from Our Travelers</h1>
+      </div>
+
+      <section class="reviews-stage-section">
+        <div class="reviews-deck-container">
+          <div class="card-deck-track" id="cardDeckTrack">
+
+            <div class="passport-card" data-index="0">
+              <div class="passport-cover">
+                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=700" alt="Attabad Lake Hunza"/>
+                <span class="passport-tag-pill">Northern Highlands</span>
+              </div>
+              <div class="passport-body">
+                <div class="passport-header-row">
+                  <h3 class="passport-title">Azure Lake Haven</h3>
+                </div>
+                <div class="passport-location">📍 Hunza & Attabad, Gilgit-Baltistan</div>
+                <p class="passport-quote">"Hunza and Attabad Lake were surreal. Our native driver Ali navigated every high pass effortlessly and introduced us to local hospitality."</p>
+                <div class="passport-metrics">
+                  <div class="metric-col"><span>Distance</span><strong>740 KM</strong></div>
+                  <div class="metric-col"><span>Altitude</span><strong>2,438 M</strong></div>
+                  <div class="metric-col accent"><span>Rating</span><strong>★ 4.9</strong></div>
+                </div>
+                <div class="passport-footer">
+                  <div class="passport-author-meta">
+                    <img class="passport-author-avatar" src="https://i.pravatar.cc/80?img=68" alt="Hamza Siddiqui"/>
+                    <div>
+                      <div class="author-details-name">Hamza & Ayesha</div>
+                      <div class="author-details-date">Autumn Tour</div>
+                    </div>
+                  </div>
+                  <button class="passport-flight-btn" title="Explore Route" onclick="location.hash='#expeditions'">✈</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="passport-card" data-index="1">
+              <div class="passport-cover">
+                <img src="https://i.pinimg.com/1200x/85/06/df/8506df0b7f077f73599202dbc7cafd39.jpg" alt="Shigar Palace Baltistan"/>
+                <span class="passport-tag-pill">Royal Heritage</span>
+              </div>
+              <div class="passport-body">
+                <div class="passport-header-row">
+                  <h3 class="passport-title">Fortress of Shigar</h3>
+                </div>
+                <div class="passport-location">📍 Serena Shigar Fort, Skardu</div>
+                <p class="passport-quote">"Stepping into the 400-year-old Raja suites was unforgettable. Safar handled domestic flight delays from Islamabad with a standby 4x4 backup without a hitch."</p>
+                <div class="passport-metrics">
+                  <div class="metric-col"><span>Distance</span><strong>630 KM</strong></div>
+                  <div class="metric-col"><span>Altitude</span><strong>2,230 M</strong></div>
+                  <div class="metric-col accent"><span>Rating</span><strong>★ 5.0</strong></div>
+                </div>
+                <div class="passport-footer">
+                  <div class="passport-author-meta">
+                    <img class="passport-author-avatar" src="https://i.pravatar.cc/80?img=12" alt="Tariq Mehmood"/>
+                    <div>
+                      <div class="author-details-name">Tariq Mehmood</div>
+                      <div class="author-details-date">Heritage Baltistan</div>
+                    </div>
+                  </div>
+                  <button class="passport-flight-btn" title="Explore Route" onclick="location.hash='#expeditions'">✈</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="passport-card" data-index="2">
+              <div class="passport-cover">
+                <img src="https://i.pinimg.com/1200x/d4/b4/8a/d4b48aa465bc2caefd547ca8053c7473.jpg" alt="Gorakh Hill Station Sindh"/>
+                <span class="passport-tag-pill">Sindh Highlands</span>
+              </div>
+              <div class="passport-body">
+                <div class="passport-header-row">
+                  <h3 class="passport-title">Midnight Escarpment</h3>
+                </div>
+                <div class="passport-location">📍 Gorakh Peak, Dadu Sindh</div>
+                <p class="passport-quote">"The 4x4 ascent from Wahi Pandhi was thrilling. Cozy cliffside camping, hot cardamom chai, and the coldest, most brilliant starry sky in Sindh."</p>
+                <div class="passport-metrics">
+                  <div class="metric-col"><span>Distance</span><strong>420 KM</strong></div>
+                  <div class="metric-col"><span>Altitude</span><strong>1,734 M</strong></div>
+                  <div class="metric-col accent"><span>Rating</span><strong>★ 4.9</strong></div>
+                </div>
+                <div class="passport-footer">
+                  <div class="passport-author-meta">
+                    <img class="passport-author-avatar" src="https://i.pravatar.cc/80?img=60" alt="Kashif Memon"/>
+                    <div>
+                      <div class="author-details-name">Kashif & Nida</div>
+                      <div class="author-details-date">Gorakh Stargaze</div>
+                    </div>
+                  </div>
+                  <button class="passport-flight-btn" title="Explore Route" onclick="location.hash='#expeditions'">✈</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="passport-card" data-index="3">
+              <div class="passport-cover">
+                <img src="https://i.pinimg.com/1200x/3b/19/1d/3b191d6452715b555993a6bbd82ccd49.jpg" alt="Nanga Parbat Base Camp"/>
+                <span class="passport-tag-pill">Adventure Base</span>
+              </div>
+              <div class="passport-body">
+                <div class="passport-header-row">
+                  <h3 class="passport-title">Nanga Parbat Ridge</h3>
+                </div>
+                <div class="passport-location">📍 Fairy Meadows, Diamer</div>
+                <p class="passport-quote">"Waking up right under the 8,126m Killer Mountain face was breathtaking. Heated pine log cabins, seasoned porters, and total safety."</p>
+                <div class="passport-metrics">
+                  <div class="metric-col"><span>Distance</span><strong>520 KM</strong></div>
+                  <div class="metric-col"><span>Altitude</span><strong>3,300 M</strong></div>
+                  <div class="metric-col accent"><span>Rating</span><strong>★ 4.9</strong></div>
+                </div>
+                <div class="passport-footer">
+                  <div class="passport-author-meta">
+                    <img class="passport-author-avatar" src="https://i.pravatar.cc/80?img=33" alt="Zainab Raza"/>
+                    <div>
+                      <div class="author-details-name">Zainab Raza</div>
+                      <div class="author-details-date">Base Camp Trek</div>
+                    </div>
+                  </div>
+                  <button class="passport-flight-btn" title="Explore Route" onclick="location.hash='#expeditions'">✈</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="passport-card" data-index="4">
+              <div class="passport-cover">
+                <img src="https://i.pinimg.com/736x/e7/d9/66/e7d966077c7e8b699a2579f31296b4f9.jpg" alt="Mohenjo-daro Stupa"/>
+                <span class="passport-tag-pill">Bronze Age Ruins</span>
+              </div>
+              <div class="passport-body">
+                <div class="passport-header-row">
+                  <h3 class="passport-title">Indus Bronze Citadel</h3>
+                </div>
+                <div class="passport-location">📍 Mohenjo-daro & Sukkur, Sindh</div>
+                <p class="passport-quote">"Walking through 5,000-year-old streets with our licensed archaeologist brought ancient Indus engineering alive. Extraordinary curation."</p>
+                <div class="passport-metrics">
+                  <div class="metric-col"><span>Distance</span><strong>480 KM</strong></div>
+                  <div class="metric-col"><span>Era</span><strong>2500 BCE</strong></div>
+                  <div class="metric-col accent"><span>Rating</span><strong>★ 4.8</strong></div>
+                </div>
+                <div class="passport-footer">
+                  <div class="passport-author-meta">
+                    <img class="passport-author-avatar" src="https://i.pravatar.cc/80?img=47" alt="Dr. Bilal"/>
+                    <div>
+                      <div class="author-details-name">Dr. Bilal & Family</div>
+                      <div class="author-details-date">Sufi & Indus Circuit</div>
+                    </div>
+                  </div>
+                  <button class="passport-flight-btn" title="Explore Route" onclick="location.hash='#expeditions'">✈</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="passport-card" data-index="5">
+              <div class="passport-cover">
+                <img src="https://i.pinimg.com/1200x/7a/65/f4/7a65f4065833671c7aa84f86fe8d693f.jpg" alt="Kund Malir Balochistan"/>
+                <span class="passport-tag-pill">Arabian Coast</span>
+              </div>
+              <div class="passport-body">
+                <div class="passport-header-row">
+                  <h3 class="passport-title">Makran Ocean Dunes</h3>
+                </div>
+                <div class="passport-location">📍 Kund Malir & Hingol, Balochistan</div>
+                <p class="passport-quote">"Cruising the Makran Coastal Highway was mesmerizing. Golden sand dunes dropping straight into pristine turquoise seawater. Unrivaled serenity."</p>
+                <div class="passport-metrics">
+                  <div class="metric-col"><span>Distance</span><strong>245 KM</strong></div>
+                  <div class="metric-col"><span>Terrain</span><strong>Coastal 4x4</strong></div>
+                  <div class="metric-col accent"><span>Rating</span><strong>★ 4.9</strong></div>
+                </div>
+                <div class="passport-footer">
+                  <div class="passport-author-meta">
+                    <img class="passport-author-avatar" src="https://i.pravatar.cc/80?img=52" alt="Farhan Qureshi"/>
+                    <div>
+                      <div class="author-details-name">Farhan Qureshi</div>
+                      <div class="author-details-date">Coastal Escape</div>
+                    </div>
+                  </div>
+                  <button class="passport-flight-btn" title="Explore Route" onclick="location.hash='#expeditions'">✈</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="carousel-nav-arrows">
+          <button class="c-arrow-btn" onclick="rotateDeck(-1)" title="Previous Story">‹</button>
+          <button class="c-arrow-btn" onclick="rotateDeck(1)" title="Next Story">›</button>
+        </div>
+      </section>
+    </div>
+
+    <!-- PAGE 6: FAQ -->
+    <div id="page-faq" class="page-view">
+      <section class="faq-showcase-section">
+        <div class="faq-ambient-orb faq-orb-top"></div>
+        <div class="faq-ambient-orb faq-orb-bottom"></div>
+
+        <div class="faq-stage-container">
+          <div style="text-align: center;">
+            <div class="faq-badge-tag">Clarifications & Logistics</div>
+            <h2 class="faq-hero-heading">FAQs about <span>SAFAR!</span></h2>
+          </div>
+
+          <div class="faq-pills-stack">
+            <details class="faq-pill-box reveal-card" open>
+              <summary>
+                <span>What is SAFAR?</span>
+                <span class="faq-chevron">⌄</span>
+              </summary>
+              <div class="faq-answer-content">
+                <strong>A bespoke expedition and luxury travel concierge for Pakistan.</strong> We curate premium journeys across the high glacial valleys of Gilgit-Baltistan, ancient Indus civilizations in Sindh, and coastal routes in Balochistan with verified 4x4 Land Cruisers, licensed local guides, and luxury heritage stays.
+              </div>
+            </details>
+
+            <details class="faq-pill-box reveal-card">
+              <summary>
+                <span>Are domestic flights to Skardu and Gilgit included?</span>
+                <span class="faq-chevron">⌄</span>
+              </summary>
+              <div class="faq-answer-content">
+                <strong>Yes, round-trip flights from Islamabad can be included.</strong> Because northern mountain weather can occasionally delay flights, SAFAR maintains an immediate standby 4x4 Land Cruiser backup fleet via the Karakoram Highway so your trip itinerary proceeds uninterrupted.
+              </div>
+            </details>
+
+            <details class="faq-pill-box reveal-card">
+              <summary>
+                <span>How do I book a private or custom family tour?</span>
+                <span class="faq-chevron">⌄</span>
+              </summary>
+              <div class="faq-answer-content">
+                <strong>Simple and friction-free.</strong> Click "Plan Your Journey" to specify your dates, group size, and destination preference. A dedicated destination coordinator in Karachi or Islamabad will provide an itemized proposal via WhatsApp within 24 hours.
+              </div>
+            </details>
+
+            <details class="faq-pill-box reveal-card">
+              <summary>
+                <span>What is your weather cancellation & refund policy?</span>
+                <span class="faq-chevron">⌄</span>
+              </summary>
+              <div class="faq-answer-content">
+                If landslides or severe weather close high mountain passes, our ground team immediately re-routes your group to safe, luxury alternative valleys (such as Serena Shigar or Serena Hunza) or provides a <strong>100% travel credit valid for 12 months</strong>.
+              </div>
+            </details>
+
+            <details class="faq-pill-box reveal-card">
+              <summary>
+                <span>Do foreign tourists or overseas Pakistanis require special permits?</span>
+                <span class="faq-chevron">⌄</span>
+              </summary>
+              <div class="faq-answer-content">
+                Most top destinations—including Hunza, Skardu, Swat, Thatta, and Mohenjo-daro—<strong>do not require special NOC permits</strong> for international travelers. For restricted border regions or high-altitude climbing zones, SAFAR processes all government security clearances on your behalf.
+              </div>
+            </details>
+          </div>
+
+          <div class="faq-bottom-callout">
+            <div class="faq-callout-sub">Got more questions?</div>
+            <p class="faq-callout-text">Message our destination specialists directly to plan your custom homeland journey.</p>
+            <div class="faq-btn-group">
+              <a href="https://wa.me/923001234567" target="_blank" class="faq-chat-btn">
+                <span>💬</span> WhatsApp Concierge
+              </a>
+              <a href="#plan" class="faq-link-pill">
+                <span>✦</span> Custom Itinerary Request
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- PAGE 7: PLAN YOUR JOURNEY (BOOKING TAB) -->
+    <div id="page-plan" class="page-view">
+      <section class="tix-plan-stage">
+        <div class="tix-plan-grid">
+          
+          <div class="tix-narrative-box reveal-card">
+            <div class="tix-pill-badge">Bespoke Concierge</div>
+            <h1 class="tix-hero-title">SAFAR Where Every <span>Journey Begins</span></h1>
+            <p class="tix-hero-sub">
+              Embark on your homeland expedition with confidence and ease. SAFAR unlocks unprecedented access to high Karakoram peaks, ancient Indus heritage, and private 4x4 convoys.
+            </p>
+
+            <ul class="tix-perks-list">
+              <li><span class="tix-check-circle">✓</span><span>Dedicated personal expedition coordinator in Karachi & Islamabad</span></li>
+              <li><span class="tix-check-circle">✓</span><span>All-terrain 4x4 Prado & Land Cruiser convoys with licensed mountain escorts</span></li>
+              <li><span class="tix-check-circle">✓</span><span>Exclusive boutique fort palace bookings & private resthouse permits</span></li>
+            </ul>
+          </div>
+
+          <div class="tix-white-card reveal-card" id="bookingCard">
+            <form onsubmit="handleInquirySubmit(event)">
+              
+              <div class="tix-form-field">
+                <label class="tix-field-label">Full Name</label>
+                <div class="tix-input-box">
+                  <input type="text" id="formName" placeholder="Enter your full name" required />
+                </div>
+              </div>
+
+              <div class="tix-form-field">
+                <label class="tix-field-label">WhatsApp / Contact Phone</label>
+                <div class="tix-input-box">
+                  <input type="tel" id="formPhone" placeholder="+92 300 1234567" required />
+                </div>
+              </div>
+
+              <div class="tix-form-field">
+                <label class="tix-field-label">Destination / Tour Circuit</label>
+                <div class="tix-input-box">
+                  <select id="formDestination">
+                    <option value="Hunza & Passu Cones">Hunza & Passu Cones (High Peaks)</option>
+                    <option value="Gorakh Hill Stargazing (2 Days)">Gorakh Hill Station & Kirthar (Sindh)</option>
+                    <option value="Mohenjo-daro & Sukkur (4 Days)">Indus Archaeology: Mohenjo-daro & Sukkur</option>
+                    <option value="Skardu & Deosai Plains">Skardu & Deosai National Park</option>
+                    <option value="Fairy Meadows Trek (6 Days)">Fairy Meadows & Nanga Parbat Base</option>
+                    <option value="Serena Shigar & Khaplu Retreat (5 Days)">Serena Forts Palace Retreat</option>
+                    <option value="Sufi Trail: Thatta & Sehwan (3 Days)">Sindh Sufi Trail: Thatta & Sehwan</option>
+                    <option value="Hunza Autumn Tour (7 Days)">Hunza Autumn Tour (7 Days)</option>
+                    <option value="Custom Bespoke Itinerary">Multi-Region Bespoke Route</option>
+                  </select>
+                  <span class="tix-select-chevron">⌄</span>
+                </div>
+              </div>
+
+              <div class="tix-form-field">
+                <label class="tix-field-label">Group Preference</label>
+                <div class="tix-input-box">
+                  <select id="formGroupSize">
+                    <option>Solo Traveler / Couple (1-2)</option>
+                    <option>Small Family / Friends (3-6)</option>
+                    <option>Large Group (7+)</option>
+                    <option>Corporate Retreat & Film Crew</option>
+                  </select>
+                  <span class="tix-select-chevron">⌄</span>
+                </div>
+              </div>
+
+              <div class="tix-form-field">
+                <label class="tix-field-label">Target Travel Date & Notes</label>
+                <div class="tix-input-box">
+                  <input type="text" id="formNotes" placeholder="e.g. Mid-October, departing from Karachi..." />
+                </div>
+              </div>
+
+              <button type="submit" class="tix-submit-btn">Find & Book Expedition →</button>
+            </form>
+          </div>
+
+        </div>
+
+        <div class="tix-sponsors-strip">
+          <div class="tix-sponsor-kicker">Supported by Leading Tourism Institutions:</div>
+          <div class="tix-badges-deck">
+            <div class="tix-badge-unit"><span class="tix-badge-symbol">✦</span> PTDC Verified</div>
+            <div class="tix-badge-unit"><span class="tix-badge-symbol">✦</span> Serena Forts</div>
+            <div class="tix-badge-unit"><span class="tix-badge-symbol">✦</span> Alpine Club Pak</div>
+            <div class="tix-badge-unit"><span class="tix-badge-symbol">✦</span> Sindh Heritage</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="ft-grid">
+      <div>
+        <a href="#home" class="ft-logo">SAF<span>AR</span></a>
+        <p class="ft-desc">Curating premier mountain expeditions, cultural Sufi trails, and heritage stays across Pakistan with unmatched on-ground reliability.</p>
+      </div>
+      <div>
+        <h4>Regions</h4>
+        <ul>
+          <li><a href="#destinations" onclick="filterDestinations('sindh')">Sindh Heritage & Gorakh</a></li>
+          <li><a href="#destinations" onclick="filterDestinations('north')">Gilgit-Baltistan Peaks</a></li>
+          <li><a href="#destinations" onclick="filterDestinations('kp')">Khyber Pakhtunkhwa</a></li>
+          <li><a href="#destinations" onclick="filterDestinations('coast')">Balochistan Coast</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Safar</a></li>
+          <li><a href="#expeditions">Curated Expeditions</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#reviews">Guest Stories</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#plan">Plan Custom Trip</a></li>
+          <li><a href="#faq">Travel Advisory FAQ</a></li>
+          <li><a href="#faq">Cancellation Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">© 2026 Sandesh Kumar — All rights reserved.</div>
+  </footer>
+
+  <!-- External Script -->
+  <script src="script.js"></script>
+</body>
+</html>
